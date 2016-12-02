@@ -52,7 +52,7 @@ class SearchCard extends React.Component {
             var key = 0;
             for (var prop in university) {
                 if (university[prop]) {
-                    res.push(<div key={key}><h3>{ prop }: </h3>{university[prop]}</div>);
+                    res.push(<p key={key}><b>{ prop }: </b>{university[prop]}</p>);
                 }
                 key++;
             }
