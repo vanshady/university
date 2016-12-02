@@ -19,7 +19,7 @@ class SearchCard extends React.Component {
         };
         const self = this;
         request
-            .get('http://127.0.0.1:3000/university_list')
+            .get('http://127.0.0.1:3000/company_list')
             .end(function (err, res) {
                     if (res) {
                         self.setState({
@@ -85,7 +85,7 @@ class SearchCard extends React.Component {
         return (
             <Card expanded={ this.state.expanded } onExpandChange={ this._handleExpandChange.bind(this) }
                 style={{ marginTop: '10px', marginBottom: '10px' }}>
-                <CardHeader showExpandableButton title="Search a university" />
+                <CardHeader showExpandableButton title="Search a company" />
                 <SearchBar onSearched={ this._onSearched.bind(this) } universities={ this.state.universities } />
                 <CardText expandable={true}>
                     { this.renderUniversity() }

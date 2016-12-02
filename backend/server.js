@@ -20,9 +20,36 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: config.username,
   password: config.password,
-  database: config.database,
+  database: 'university',
 });
 app.use(cors());
+
+app.get('/university_list', (req, res) => {
+  const queryRes = (err, rows) => {
+    const data = [];
+    if (err) throw err;
+
+    for (let i = 0; i < rows.length; i++) {
+      data.push(rows[i].name);
+    }
+
+    res.json(data);
+  };
+
+  connection.query('SELECT name FROM university',
+    queryRes);
+});
+
+/**
+ * For test
+ */
+const connection2 = mysql.createConnection({
+  host: 'localhost',
+  user: config.username,
+  password: config.password,
+  database: config.database,
+});
+
 app.get('/company_list', (req, res) => {
   const queryRes = (err, rows) => {
     const data = [];
@@ -35,10 +62,11 @@ app.get('/company_list', (req, res) => {
     res.json(data);
   };
 
-  connection.query('SELECT name FROM cb_objects WHERE NOT (name = "")',
+  connection2.query('SELECT name FROM cb_objects WHERE NOT (name = "")',
     queryRes);
 });
 
+// Test code ended
 app
   .use('/graphql', cors(), graphqlHTTP({
     schema,

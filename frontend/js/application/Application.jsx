@@ -7,6 +7,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Panel from './components/Panel.jsx';
 import SearchCard from './components/searchcard/SearchCard.jsx';
+import CompanyCard from './components/searchcard/CompanyCard.jsx';
 
 class Application extends React.Component {
 
@@ -24,7 +25,7 @@ class Application extends React.Component {
               <Header/>
               <Panel>
                 <SearchCard />
-                {/* <SearchCard /> */}
+                <CompanyCard />
                 <div />
               </Panel>
               {/* <Footer/> */}
