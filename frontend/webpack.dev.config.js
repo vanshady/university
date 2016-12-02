@@ -52,7 +52,7 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),
         new HtmlWebpackPlugin({
-            title: 'frontend',
+            title: 'University Dashboard',
             description: '',
             username: 'Minwei Xu',
             filename: 'index.html',
