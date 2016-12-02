@@ -14,9 +14,19 @@ class SearchCard extends React.Component {
         super(props);
         this.state = {
             university: '',
-            universities: ['Johns Hopkins University', 'UC Davis', 'Harvard University', 'Palantir Technologies'],
+            universities: [],
             expanded: true,
         };
+        const self = this;
+        request
+            .get('http://127.0.0.1:3000/company_list')
+            .end(function (err, res) {
+                    if (res) {
+                        self.setState({
+                            universities: JSON.parse(res.text).slice(1000, 3000)
+                        })
+                    }
+                });
     }
     
     requestUniversity(name, done) {

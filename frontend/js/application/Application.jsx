@@ -24,7 +24,8 @@ class Application extends React.Component {
               <Header/>
               <Panel>
                 <SearchCard />
-                <SearchCard />
+                {/* <SearchCard /> */}
+                <div />
               </Panel>
               {/* <Footer/> */}
             </div>

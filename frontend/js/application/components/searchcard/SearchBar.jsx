@@ -29,6 +29,7 @@ class SearchBar extends React.Component {
               <AutoComplete hintText="Which university are you interested in?"
                 dataSource={ this.props.universities }
                 fullWidth={ true }
+                maxSearchResults={ 10 }
                 style={ inputStyle }
                 underlineStyle={ underlineStyle }
                 onNewRequest={ this._newRequest.bind(this) } />
