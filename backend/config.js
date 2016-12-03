@@ -1,5 +1,5 @@
 module.exports = {
-  database: 'crunchbase',
+  database: 'university',
   username: 'root',
   password: null,
   options: {

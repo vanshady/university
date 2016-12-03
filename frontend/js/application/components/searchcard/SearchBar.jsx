@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
 
         return (
             <div>
-              <AutoComplete hintText="Which university are you interested in?"
+              <AutoComplete hintText={ this.props.hintText ? this.props.hintText : 'Search' }
                 dataSource={ this.props.universities }
                 fullWidth={ true }
                 filter ={ (searchText, key) => { return searchText !== '' && key.substr(0, searchText.length) == searchText;} }
@@ -39,6 +39,10 @@ class SearchBar extends React.Component {
     }
 }
 
-SearchBar.propTypes = {onSearched: React.PropTypes.func, universities: React.PropTypes.array };
+SearchBar.propTypes = {
+    onSearched: React.PropTypes.func,
+    universities: React.PropTypes.array,
+    hintText: React.PropTypes.string,
+};
 
 export default SearchBar;

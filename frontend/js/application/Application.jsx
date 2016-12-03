@@ -4,10 +4,9 @@ import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
+// import Footer from './components/Footer.jsx';
 import Panel from './components/Panel.jsx';
 import SearchCard from './components/searchcard/SearchCard.jsx';
-import CompanyCard from './components/searchcard/CompanyCard.jsx';
 
 class Application extends React.Component {
 
@@ -25,7 +24,6 @@ class Application extends React.Component {
               <Header/>
               <Panel>
                 <SearchCard />
-                <CompanyCard />
                 <div />
               </Panel>
               {/* <Footer/> */}

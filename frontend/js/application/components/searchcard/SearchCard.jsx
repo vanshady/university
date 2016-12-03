@@ -31,9 +31,7 @@ class SearchCard extends React.Component {
     
     requestUniversity(name, done) {
         request
-            .post('http://127.0.0.1:3000/graphql')
-            .set('Content-Type', 'application/json')
-            .send({ "query": "{object(where:{name:\"" + name + "\"}){name, domain, homepage_url, overview, founded_at}}" })
+            .get(`http://127.0.0.1:3000/university/${name}`)
             .end(function (err, res) {
                     if (res) {
                         done(err, res)
@@ -65,13 +63,14 @@ class SearchCard extends React.Component {
             expanded: true
         });
         this.req = this.requestUniversity(university, function (err, res) {
-            if (JSON.parse(res.text).data && JSON.parse(res.text).data.object[0]) {
+            console.log(res.text);
+            if (JSON.parse(res.text)) {
                 this.setState({
-                    university: JSON.parse(res.text).data.object[0]
+                    university: JSON.parse(res.text)
                 })} else {
                     this.setState({
-                    university: errorMessage
-                })
+                        university: errorMessage
+                    })
                 }
                 
         }.bind(this)); 
@@ -86,7 +85,12 @@ class SearchCard extends React.Component {
             <Card expanded={ this.state.expanded } onExpandChange={ this._handleExpandChange.bind(this) }
                 style={{ marginTop: '10px', marginBottom: '10px' }}>
                 <CardHeader showExpandableButton title="Search a university" />
-                <SearchBar onSearched={ this._onSearched.bind(this) } universities={ this.state.universities } />
+
+                <SearchBar onSearched={ this._onSearched.bind(this) }
+                    universities={ this.state.universities } 
+                    hintText="Which university are you interested in?"
+                />
+
                 <CardText expandable={true}>
                     { this.renderUniversity() }
                 </CardText>
