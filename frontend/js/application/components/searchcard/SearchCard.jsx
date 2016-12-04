@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar.jsx';
 
 const request = require('superagent');
 
@@ -14,16 +14,46 @@ class SearchCard extends React.Component {
             universities: [],
             expanded: true,
         };
+        this.onSearched = this.onSearched.bind(this);
         const self = this;
         request
             .get('http://127.0.0.1:3000/university_list')
-            .end(function (err, res) {
+            .end((err, res) => {
                 if (res) {
                     self.setState({
                         universities: JSON.parse(res.text),
                     });
                 }
             });
+    }
+
+    onSearched(university) {
+        const self = this;
+        function requestUniversity(name, done) {
+            request
+                .get(`http://127.0.0.1:3000/university/${name}`)
+                .end((err, res) => {
+                    if (res) {
+                        done(err, res);
+                    }
+                });
+        }
+        function handleResponse(err, res) {
+            if (JSON.parse(res.text)) {
+                self.setState({
+                    university: JSON.parse(res.text),
+                });
+            } else {
+                self.setState({
+                    university: errorMessage,
+                });
+            }
+        }
+        this.setState({
+            university: '',
+            expanded: true,
+        });
+        this.req = requestUniversity(university, handleResponse);
     }
 
     renderUniversity() {
@@ -33,61 +63,28 @@ class SearchCard extends React.Component {
             if (university === errorMessage) {
                 return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
             }
-            var key = 0;
-            for (var prop in university) {
+            let key = 0;
+            Object.keys(university).forEach((prop) => {
                 if (university[prop]) {
                     res.push(<p key={key}><b>{ prop }: </b>{university[prop]}</p>);
                 }
-                key++;
-            }
+                key += 1;
+            });
         }
         return res;
-    }
-
-    onSearched(university) {
-        this.setState({
-            university: '',
-            expanded: true,
-        });
-        this.req = this.requestUniversity(university, function (err, res) {
-            console.log(res.text);
-            if (JSON.parse(res.text)) {
-                this.setState({
-                    university: JSON.parse(res.text),
-                });
-            } else {
-                this.setState({
-                    university: errorMessage,
-                });
-            }
-        }.bind(this));
-    }
-
-    requestUniversity(name, done) {
-        request
-            .get(`http://127.0.0.1:3000/university/${name}`)
-            .end(function (err, res) {
-                if (res) {
-                    done(err, res);
-                }
-            });
-    }
-
-    handleExpandChange(expanded) {
-        this.setState({ expanded });
     }
 
     render() {
         return (
           <Card
             expanded={this.state.expanded}
-            onExpandChange={ this.handleExpandChange.bind(this)}
+            onExpandChange={(expanded) => { this.setState({ expanded }); }}
             style={{ marginTop: '10px', marginBottom: '10px' }}
           >
             <CardHeader showExpandableButton title="Search a university" />
 
             <SearchBar
-              onSearched={this.onSearched.bind(this)}
+              onSearched={this.onSearched}
               universities={this.state.universities}
               hintText="Which university are you interested in?"
             />

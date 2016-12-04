@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import _ from 'lodash';
@@ -10,18 +8,33 @@ class Panel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            paperStyle: this._getPaperStyle(),
-            zDepth: this._getZDepth()
+            paperStyle: this.getPaperStyle(),
+            zDepth: this.getZDepth(),
         };
-        this._onResize = _.debounce(this._onResize, 150).bind(this);
+        this.onResize = _.debounce(this.onResize, 150).bind(this);
     }
 
-    _getPaperStyle() {
-        let style = {
+    componentWillMount() {
+        window.addEventListener('resize', this.onResize, false);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.onResize, false);
+    }
+
+    onResize(e) {
+        this.setState({
+            paperStyle: this.getPaperStyle(),
+            zDepth: this.getZDepth(),
+        });
+    }
+
+    getPaperStyle() {
+        const style = {
             // minHeight: '350px',
             margin: '5px auto 0 auto',
             paddingBottom: '10px',
-            backgroundColor: '#fff'
+            backgroundColor: '#fff',
         };
         if (UI.windowWidth() <= UI.BREAK_POINT) {
             style.width = '100%';
@@ -31,34 +44,18 @@ class Panel extends React.Component {
         return style;
     }
 
-    _getZDepth() {
+    getZDepth() {
         return UI.windowWidth() <= UI.BREAK_POINT ? 0 : 1;
-    }
-
-    _onResize(e) {
-        this.setState({
-            paperStyle: this._getPaperStyle(),
-            zDepth: this._getZDepth()
-        });
-    }
-
-    componentWillMount() {
-        window.addEventListener('resize', this._onResize, false);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this._onResize, false);
     }
 
     render() {
         return (
-            <Paper style={ this.state.paperStyle } zDepth={ 0 } rounded={ false }>
-              { this.props.children }
-            </Paper>
-            );
+          <Paper style={this.state.paperStyle} zDepth={0} rounded={false}>
+            { this.props.children }
+          </Paper>);
     }
 }
 
-Panel.propTypes = {children: React.PropTypes.array};
+Panel.propTypes = { children: React.PropTypes.arrayOf(React.PropTypes.node) };
 
 export default Panel;

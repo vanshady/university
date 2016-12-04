@@ -1,16 +1,14 @@
-'use strict';
-
 import React from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
-import uuid from 'uuid';
 import { isFunction, trim } from 'lodash';
 
 class SearchBar extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+        this.newRequest = this.newRequest.bind(this);
     }
 
-    _newRequest(value) {
+    newRequest(value) {
         if (value == null) return;
         if (isFunction(this.props.onSearched) && trim(value)) {
             this.props.onSearched(value);
@@ -18,30 +16,31 @@ class SearchBar extends React.Component {
     }
 
     render() {
-        let inputStyle = {
+        const inputStyle = {
             padding: '16px 16px 11px 60px',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
         };
-        let underlineStyle = {marginLeft: '-60px', bottom: '0px'};
+        const underlineStyle = { marginLeft: '-60px', bottom: '0px' };
 
         return (
-            <div>
-              <AutoComplete hintText={ this.props.hintText ? this.props.hintText : 'Search' }
-                dataSource={ this.props.universities }
-                fullWidth={ true }
-                filter ={ (searchText, key) => { return searchText !== '' && key.substr(0, searchText.length) == searchText;} }
-                maxSearchResults={ 10 }
-                style={ inputStyle }
-                underlineStyle={ underlineStyle }
-                onNewRequest={ this._newRequest.bind(this) } />
-            </div>
-            );
+          <div>
+            <AutoComplete
+              hintText={this.props.hintText ? this.props.hintText : 'Search'}
+              dataSource={this.props.universities}
+              fullWidth
+              filter={(searchText, key) => searchText !== '' && key.substr(0, searchText.length) === searchText}
+              maxSearchResults={10}
+              style={inputStyle}
+              underlineStyle={underlineStyle}
+              onNewRequest={this.newRequest}
+            />
+          </div>);
     }
 }
 
 SearchBar.propTypes = {
     onSearched: React.PropTypes.func,
-    universities: React.PropTypes.array,
+    universities: React.PropTypes.arrayOf(React.PropTypes.string),
     hintText: React.PropTypes.string,
 };
 

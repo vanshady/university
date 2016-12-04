@@ -27,7 +27,7 @@ app.get('/university_list', (req, res) => {
       const data = [];
       if (e) throw e;
 
-      for (let i = 0; i < rows.length; i++) {
+      for (let i = 0; i < rows.length; i += 1) {
         data.push(rows[i].name);
       }
       connection.release();

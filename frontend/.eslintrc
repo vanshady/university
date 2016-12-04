@@ -4,7 +4,6 @@
       "prefer-arrow-callback": 0,
       "no-console": 0,
       "prefer-template": 0,
-      "indent": ["error", 4],
-      "no-plusplus": 0
+      "indent": ["error", 4]
     }
 }
