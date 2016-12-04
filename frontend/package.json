@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend for university",
   "scripts": {
     "dev": "rm -rf build && webpack --config webpack.dev.config.js",
     "dist": "rm -rf build && webpack --config webpack.prod.config.js",
@@ -22,6 +22,8 @@
   "author": "Minwei Xu ",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer": "^6.5.3",
+    "html-webpack-plugin": "^2.24.1",
     "lodash": "^4.17.2",
     "material-ui": "^0.16.4",
     "react": "^15.4.1",
@@ -33,7 +35,8 @@
     "react-tap-event-plugin": "^2.0.1",
     "splash-screen": "^3.0.1",
     "superagent": "^3.1.0",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "webpack": "^1.13.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
