@@ -42,6 +42,7 @@ module.exports = {
             path.resolve(__dirname),
             path.resolve(__dirname, 'js', 'fw', 'lib'),
         ],
+        extensions: ['', '.js', '.jsx'],
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import SearchBar from './SearchBar.jsx';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
+import SearchBar from './SearchBar';
 
 const request = require('superagent');
 
