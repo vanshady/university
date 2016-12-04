@@ -10,41 +10,47 @@ const mysql = require('mysql');
 
 const config = require('./config');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
+const pool = mysql.createPool({
+  host: config.host,
   user: config.username,
   password: config.password,
   database: config.database,
 });
+
 app.use(cors());
 
 app.get('/university_list', (req, res) => {
-  const queryRes = (err, rows) => {
-    const data = [];
+  pool.getConnection((err, connection) => {
     if (err) throw err;
 
-    for (let i = 0; i < rows.length; i++) {
-      data.push(rows[i].name);
-    }
+    connection.query('SELECT name FROM university', (e, rows) => {
+      const data = [];
+      if (e) throw e;
 
-    res.json(data);
-  };
-
-  connection.query('SELECT name FROM university',
-    queryRes);
+      for (let i = 0; i < rows.length; i++) {
+        data.push(rows[i].name);
+      }
+      connection.release();
+      res.json(data);
+    });
+  });
 });
 
 app.get('/university/:uName', (req, res) => {
   const uName = req.params.uName;
 
-  const queryRes = (err, rows) => {
-    if (err) throw err;
-    res.json(rows[0]);
-  };
-  connection.query(`SELECT * FROM university WHERE NAME = "${uName}";`,
-    queryRes);
+
+  pool.getConnection((err, connection) => {
+    connection.query(`SELECT * FROM university WHERE NAME = "${uName}";`,
+      (e, rows) => {
+        if (e) throw e;
+
+        connection.release();
+        res.json(rows[0]);
+      });
+  });
 });
 
-app.listen(port, function () {
+app.listen(port, () => {
   console.log(`App listening on port ${port}!`);
 });
