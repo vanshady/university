@@ -12,3 +12,5 @@ npm-debug.log
 *.bundle.js
 
 node_modules
+
+backend/~$CollegeScorecardDataDictionary-10-26-2016.xlsx
