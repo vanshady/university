@@ -4,7 +4,7 @@
 
 2. Run `sed -i -e "s/,0.0,/,0,/g' output/degree_percentage.csv` in shell to replace 0.0 with 0
 
-# Extracted Tables:
+## Extracted Tables:
 
 1. Admission.csv
 
@@ -15,6 +15,10 @@
 4. Family.csv
 
 5. University.csv (city needs to be replaced by city_id)
+
+## TODO Tables
+
+City, State, Control, Level， Enrollment, Tuition, Completion, Completion_type, Student, Income, Debt
 
 ## TODO
 
