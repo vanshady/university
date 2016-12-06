@@ -14,3 +14,5 @@ npm-debug.log
 node_modules
 
 backend/~$CollegeScorecardDataDictionary-10-26-2016.xlsx
+
+*.ipynb
