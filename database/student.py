@@ -75,7 +75,7 @@ old_types = {
 
 student = pd.DataFrame(columns=columns)
 for type in old_types.keys():
-    df = raw_df.loc[:,['unit_id', type]]
+    df = raw_df.loc[:,['UNITID', type]]
     
     df['dependency'] = old_types[type]['dependency']
     df['income_level'] = old_types[type]['income_level']
@@ -84,9 +84,10 @@ for type in old_types.keys():
     student = student.append(df)
 
 student = student.dropna()
+student = student[student['percentage'] != 'PrivacySuppressed']
+
 student = student.sort_values(by=['unit_id', 'dependency', 'income_level'])
 student[['unit_id', 'income_level']] = student[['unit_id', 'income_level']].astype(int)
-student['percentage'] = student['percentage'].round(4)
 
 student.to_csv('output/Student.csv', index=False)
 
