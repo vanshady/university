@@ -66,3 +66,5 @@ as well as removing all dangling .0s
 3. Latitude and Longitutde doesn't rely on school anymore but on city.
 
 4. In Completion, year -> less_than_4yr (0 or 1)
+
+5. Added a column `student_type` in `Income.csv`

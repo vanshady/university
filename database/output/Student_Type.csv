@@ -5,9 +5,19 @@ type_id,detail
 4,Asian 
 5,American Indian/Alaska Native 
 6,Native Hawaiian/Pacific Islander 
-7,Of Two-or-more-races
-8,Non-resident alien 
+7,Of Two or More Races
+8,Non-resident Alien 
 9,Unknown Race
 10,Total
-11,Men
-12,Women
+11,Male
+12,Female
+13,Low Income
+14,Medium Income
+15,High Income
+16,First Generation
+17,Not First Generation
+18.Completed
+19.Withdrawn
+20.Dependent
+21.Independent
+22.Loaned
