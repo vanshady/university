@@ -32,18 +32,13 @@
 
 13. Enrollment.csv
 
-14. Completion.csv
+14. Completion.csv (need to be parsed again)
 
-15. Debt.csv (may need deeper parsing)
+15. Debt.csv
 
 16. Student.csv
 
 17. Debt.csv
-
-## TODO Tables
-
-Clean all tables by removing all null, 'NULL' or blank rows
-as well as removing all dangling .0s
 
 ## TODO
 
