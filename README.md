@@ -4,7 +4,7 @@
 
 2. Run `sed -i -e "s/,0.0,/,0,/g' output/degree_percentage.csv` in shell to replace 0.0 with 0
 
-## Extracted Tables:
+## Extracted Tables
 
 1. Admission.csv
 
@@ -39,18 +39,6 @@
 16. Student.csv
 
 17. Debt.csv
-
-## TODO
-
-1. Add zip and url to table
-
-2. Change some of the column names (underline, not camelcase)
-
-3. Cities in University
-
-4. PrivacySuppressed in Family. Should we use NULL?
-
-5. Should we use NULL or blank?
 
 ## Reminder
 
