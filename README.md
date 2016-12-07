@@ -28,7 +28,9 @@
 
 11. Income.csv
 
-12. Completion_Type.csv
+12. Completion_Type.csv -> Student_Type.csv
+
+13. Enrollment.csv && New_Enrollment.csv
 
 ## TODO Tables
 
