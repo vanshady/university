@@ -34,6 +34,8 @@
 
 14. Completion.csv
 
+15. Debt.csv (may need deeper parsing)
+
 ## TODO Tables
 
 Student, Debt
