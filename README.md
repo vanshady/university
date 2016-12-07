@@ -42,6 +42,9 @@
 
 Debt
 
+Clean all tables by removing all null, 'NULL' or blank rows
+as well as removing all dangling .0s
+
 ## TODO
 
 1. Add zip and url to table
