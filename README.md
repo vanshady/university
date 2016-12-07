@@ -1,53 +1,47 @@
-# Database setup procedure
-
-1. Run `python3 degree_percentage.py` which will generate degree_percentage.csv in `output`
-
-2. Run `sed -i -e "s/,0.0,/,0,/g' output/degree_percentage.csv` in shell to replace 0.0 with 0
+# University Database
 
 ## Extracted Tables
 
 1. Admission.csv
 
-2. Degree.csv
+1. Degree.csv
 
-3. Degree_Percentage.csv
+1. Degree_Percentage.csv
 
-4. Family.csv
+1. Family.csv
 
-5. University.csv
+1. University.csv
 
-6. State.csv
+1. State.csv
 
-7. City.csv
+1. City.csv
 
-8. Control.csv
+1. Control.csv
 
-9. Level.csv
+1. Level.csv
 
-10. Tuition.csv
+1. Tuition.csv
 
-11. Income.csv
+1. Income.csv
 
-12. Completion_Type.csv -> Student_Type.csv
+1. Completion_Type.csv -> Student_Type.csv
 
-13. Enrollment.csv
+1. Enrollment.csv
 
-14. Completion.csv (need to be parsed again)
+1. Completion.csv
 
-15. Debt.csv
+1. Debt.csv
 
-16. Student.csv
+1. Student.csv
 
-17. Debt.csv
+1. Debt.csv
 
 ## Reminder
 
-1. All NULL rows in Admission deleted.
+1. Latitude and Longitutde doesn't rely on school anymore but on city.
 
-2. All NULL or all PrivacySuppressed rows in Family deleted.
+1. In Completion, year -> less_than_4yr (0 or 1)
 
-3. Latitude and Longitutde doesn't rely on school anymore but on city.
+1. Added a column `student_type` in `Income.csv`
 
-4. In Completion, year -> less_than_4yr (0 or 1)
-
-5. Added a column `student_type` in `Income.csv`
+1. Should update table names and according column names.
