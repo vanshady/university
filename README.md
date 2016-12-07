@@ -36,6 +36,10 @@ City, State, Control, Level， Enrollment, Tuition, Completion, Completion_type,
 
 5. Should we use NULL or blank?
 
+6. Enrollment no gender?
+
+7. PC for race?
+
 ## Reminder
 
 1. All NULL rows in Admission deleted.
