@@ -24,9 +24,13 @@
 
 9. Level.csv
 
+10. Tuition.csv
+
+11. Income.csv
+
 ## TODO Tables
 
-Tuition, Completion, Completion_type, Student, Income, Debt
+Completion, Completion_type, Student, Debt
 
 ## TODO
 
