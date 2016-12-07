@@ -1,5 +1,13 @@
 # University Database
 
+## How to import data
+
+`CREATE TABLE UNIVERSITY` in mysql
+
+`cd database/output`
+
+`mysql -u root UNIVERSITY < *.sql`
+
 ## Extracted Tables
 
 1. Admission.csv
