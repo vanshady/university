@@ -96,8 +96,8 @@ for type in old_types.keys():
     completion = completion.append(df)
 
 completion = completion.dropna()
-completion = completion.sort_values(by=['unit_id', 'type_id'])
-completion[['type_id', 'unit_id']] = completion[['type_id', 'unit_id']].astype(int)
+completion = completion.sort_values(by=['unit_id', 'type_id','less_than_4yr'])
+completion[['type_id', 'unit_id','less_than_4yr']] = completion[['type_id', 'unit_id','less_than_4yr']].astype(int)
 completion['percentage'] = completion['percentage'].round(4)
 
 completion.to_csv('output/New_Completion.csv', index=False)
