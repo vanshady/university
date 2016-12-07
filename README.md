@@ -38,9 +38,9 @@
 
 16. Student.csv
 
-## TODO Tables
+17. Debt.csv
 
-Debt
+## TODO Tables
 
 Clean all tables by removing all null, 'NULL' or blank rows
 as well as removing all dangling .0s
