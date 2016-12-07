@@ -96,7 +96,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 95,Artesia,6,8,33.858365,-118.084414
 96,Arundel,23,1,43.380523,-70.503498
 97,Arvada,8,7,39.79046,-105.075931
-98,Ashburn,51,5,NULL,NULL
+98,Ashburn,51,5,,
 99,Asheboro,37,5,35.672899,-79.827879
 100,Asheville,37,5,35.571055,-82.555838
 101,Ashland,21,5,38.469201,-82.650664
@@ -185,7 +185,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 184,Beeville,48,6,28.435756,-97.75632
 185,Bel Air,24,2,39.561347,-76.281801
 186,Belcourt,38,4,48.883758,-99.750836
-187,Bell,6,8,NULL,NULL
+187,Bell,6,8,,
 188,Belleview,12,5,29.040113,-82.062384
 189,Belleville,17,3,38.516406,-89.924466
 190,Belleville,34,2,40.76388,-74.220373
@@ -368,7 +368,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 367,Camarillo,6,8,34.162949,-119.04356
 368,Cambridge,25,1,42.36988,-71.070721
 369,Cambridge,39,3,40.024528,-81.591279
-370,Cambridge,27,4,NULL,NULL
+370,Cambridge,27,4,,
 371,Camden,5,5,33.63037,-92.719498
 372,Camden,34,2,39.941522,-75.116469
 373,Camden,45,5,34.27162,-80.608996
@@ -392,7 +392,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 391,Cape Girardeau,29,4,37.274138,-89.56525
 392,Capitol Heights,24,2,38.86348,-76.942465
 393,Carbondale,17,3,37.713239,-89.218724
-394,Caribou,23,1,NULL,NULL
+394,Caribou,23,1,,
 395,Carlinville,17,3,39.288298,-89.872248
 396,Carlisle,42,2,40.202796,-77.197854
 397,Carlsbad,6,8,33.131313,-117.318765
@@ -415,7 +415,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 414,Casselberry,12,5,28.65432,-81.333521
 415,Castine,23,1,44.3873,-68.803214
 416,Castleton,50,1,43.607982,-73.181486
-417,Castro Valley,6,8,NULL,NULL
+417,Castro Valley,6,8,,
 418,Cathedral City,6,8,33.782575,-116.464237
 419,Cayey,72,9,18.117232,-66.163146
 420,Cazenovia,36,2,42.931946,-75.854054
@@ -551,8 +551,8 @@ city_id,city_name,state_id,region_id,latitude,longitude
 550,Columbus,13,5,32.505697,-84.979348
 551,Columbus,28,5,33.493305,-88.418601
 552,Columbus,39,3,39.954875,-82.937867
-553,Columbus,18,3,NULL,NULL
-554,Columbus,20,4,NULL,NULL
+553,Columbus,18,3,,
+554,Columbus,20,4,,
 555,Commerce,48,6,33.243814,-95.906913
 556,Commerce,6,8,33.989841,-118.138914
 557,Compton,6,8,33.876665,-118.209186
@@ -574,7 +574,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 573,Copiague,36,2,40.68032,-73.404971
 574,Copley,39,3,41.12821,-81.654881
 575,Coral Gables,12,5,25.720406,-80.27645
-576,Coral Springs,12,5,NULL,NULL
+576,Coral Springs,12,5,,
 577,Cordova,47,5,35.18061,-89.821499
 578,Corinth,28,5,34.934036,-88.520546
 579,Corning,36,2,42.11724,-77.073708
@@ -597,7 +597,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 596,Cresson,42,2,40.459948,-78.601358
 597,Creston,19,4,41.073437,-94.380906
 598,Crestview Hills,21,5,39.022963,-84.568923
-599,Crestwood,21,5,NULL,NULL
+599,Crestwood,21,5,,
 600,Crete,31,4,40.623107,-96.949656
 601,Cromwell,9,1,41.60682,-72.647853
 602,Crookston,27,4,47.802021,-96.609863
@@ -657,7 +657,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 656,Defiance,39,3,41.300336,-84.356596
 657,DeFuniak Springs,12,5,30.73213,-86.128131
 658,Dekalb,17,3,41.933791,-88.766065
-659,Del Rio,48,6,NULL,NULL
+659,Del Rio,48,6,,
 660,DeLand,12,5,29.036295,-81.301604
 661,Delaware,39,3,40.253643,-83.060146
 662,Delhi,36,2,42.270129,-74.924225
@@ -675,14 +675,14 @@ city_id,city_name,state_id,region_id,latitude,longitude
 674,Des Plaines,17,3,42.061893,-87.880644
 675,DeSoto,48,6,32.605705,-96.827185
 676,Detroit,26,3,42.361839,-83.062352
-677,Detroit Lakes,27,4,NULL,NULL
+677,Detroit Lakes,27,4,,
 678,Devils Lake,38,4,48.127948,-98.869034
 679,Dickinson,38,4,46.882677,-102.800511
 680,Dickson,47,5,36.050549,-87.366455
-681,Dickson City,42,2,NULL,NULL
+681,Dickson City,42,2,,
 682,Dillon,30,7,45.208306,-112.639264
 683,Dimock,42,2,41.78638,-75.89551
-684,Dimondale,26,3,NULL,NULL
+684,Dimondale,26,3,,
 685,Dix Hills,36,2,40.793327,-73.369968
 686,Dixon,17,3,41.817659,-89.596483
 687,Dobbs Ferry,36,2,41.021436,-73.874571
@@ -691,7 +691,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 690,Donaldson,18,3,41.337978,-86.445448
 691,Doral,12,5,25.8082,-80.352671
 692,Doraville,13,5,33.916826,-84.259389
-693,Dorchester,25,1,NULL,NULL
+693,Dorchester,25,1,,
 694,Dothan,1,5,31.316086,-85.46355
 695,Douglas,4,6,31.365757,-109.690422
 696,Douglas,13,5,31.497072,-82.850706
@@ -731,7 +731,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 730,Eagle Pass,48,6,28.707864,-100.506009
 731,Earth City,29,4,38.757955,-90.461159
 732,East Aurora,36,2,42.772212,-78.656594
-733,East Grand Forks,27,4,NULL,NULL
+733,East Grand Forks,27,4,,
 734,East Greenwich,44,1,41.661783,-71.502892
 735,East Hartford,9,1,41.771184,-72.642363
 736,East Lansing,26,3,42.72565,-84.473401
@@ -781,7 +781,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 780,Ellicott City,24,2,39.285191,-76.806415
 781,Ellisville,28,5,31.597162,-89.199694
 782,Ellsworth Air Force Base,46,4,44.148129,-103.078655
-783,Elm Grove,55,3,NULL,NULL
+783,Elm Grove,55,3,,
 784,Elmhurst,17,3,41.928952,-87.962922
 785,Elmira,36,2,42.10099,-76.828353
 786,Elmwood Park,17,3,41.93755,-87.818661
@@ -792,7 +792,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 791,Emmitsburg,24,2,39.680632,-77.35222
 792,Emory,51,5,36.772543,-81.831737
 793,Emporia,20,4,38.414106,-96.18014
-794,Encino,6,8,NULL,NULL
+794,Encino,6,8,,
 795,Enfield,9,1,41.998409,-72.570177
 796,Englewood,39,3,39.845399,-84.330305
 797,Enid,40,6,36.396929,-97.854962
@@ -819,7 +819,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 818,Evans,13,5,33.529159,-82.135503
 819,Evanston,17,3,42.053318,-87.676721
 820,Evansville,18,3,37.969955,-87.531963
-821,Eveleth,27,4,NULL,NULL
+821,Eveleth,27,4,,
 822,Everett,53,8,48.006626,-122.204736
 823,Evergreen,1,5,31.46071,-86.964486
 824,Ewing,34,2,40.268742,-74.777412
@@ -845,7 +845,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 844,Falmouth,25,1,41.561834,-70.613737
 845,Far Rockaway,36,2,40.60049,-73.743901
 846,Fargo,38,4,46.848362,-96.848715
-847,Faribault,27,4,NULL,NULL
+847,Faribault,27,4,,
 848,Farmers Branch,48,6,32.928237,-96.85016
 849,Farmingdale,36,2,40.75408,-73.426371
 850,Farmington,9,1,41.705498,-72.87754
@@ -861,7 +861,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 860,Fayetteville,47,5,35.152662,-86.572164
 861,Fayetteville,13,5,33.455874,-84.455909
 862,Feasterville,42,2,40.1644,-75.0064
-863,Feasterville Trevose,42,2,NULL,NULL
+863,Feasterville Trevose,42,2,,
 864,Federal Way,53,8,47.320326,-122.305105
 865,Fennimore,55,3,42.976238,-90.637714
 866,Fenton,29,4,38.541682,-90.462402
@@ -930,11 +930,11 @@ city_id,city_name,state_id,region_id,latitude,longitude
 929,Fremont,6,8,37.527956,-121.914597
 930,Fremont,31,4,41.44576,-96.482042
 931,Fremont,39,3,41.353137,-83.158583
-932,French Camp,6,8,NULL,NULL
+932,French Camp,6,8,,
 933,Fresno,6,8,36.814477,-119.748258
 934,Friendswood,48,6,29.523396,-95.162819
 935,Frostburg,24,2,39.651509,-78.933871
-936,Ft Myers,12,5,NULL,NULL
+936,Ft Myers,12,5,,
 937,Ft Smith,5,5,35.3594,-94.370341
 938,Ft Worth,48,6,32.68499,-97.322091
 939,Ft. Wayne,18,3,41.044946,-85.237153
@@ -1036,7 +1036,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1035,Greeneville,47,5,36.172558,-82.761716
 1036,Greenfield,25,1,42.599521,-72.630978
 1037,Greenfield,55,3,42.969138,-88.047841
-1038,Greenfield,18,3,NULL,NULL
+1038,Greenfield,18,3,,
 1039,Greensboro,37,5,36.067531,-79.77998
 1040,Greensburg,42,2,40.292824,-79.535757
 1041,Greenville,17,3,38.894751,-89.409178
@@ -1121,7 +1121,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1120,Hayward,6,8,37.65707,-122.058073
 1121,Hayward,55,3,45.941852,-91.363574
 1122,Hazard,21,5,37.233812,-83.174535
-1123,Hazle Township,42,2,NULL,NULL
+1123,Hazle Township,42,2,,
 1124,Hazle TWP.,42,2,40.972979,-75.992611
 1125,Hazleton,42,2,41.258085,-75.902888
 1126,Heathrow,12,5,28.7662,-81.361171
@@ -1138,7 +1138,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1137,Henrico,51,5,37.63249,-77.468501
 1138,Herkimer,36,2,43.032586,-75.007367
 1139,Hershey,42,2,40.263635,-76.675608
-1140,Hesperia,6,8,NULL,NULL
+1140,Hesperia,6,8,,
 1141,Hesston,20,4,38.134487,-97.433266
 1142,Hialeah,12,5,25.86696,-80.312721
 1143,Hialeah Gardens,12,5,25.8629,-80.323581
@@ -1210,7 +1210,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1209,Huron,39,3,41.39808,-82.594489
 1210,Hurst,48,6,32.821696,-97.201543
 1211,Hutchinson,20,4,38.066843,-97.919647
-1212,Hutchinson,27,4,NULL,NULL
+1212,Hutchinson,27,4,,
 1213,Hyannis,25,1,41.6507,-70.291171
 1214,Hyde Park,36,2,41.746225,-73.931833
 1215,Hyden,21,5,37.16363,-83.376447
@@ -1364,7 +1364,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1363,Lake Charles,22,5,30.228743,-93.214285
 1364,Lake City,12,5,30.174307,-82.569667
 1365,Lake City,45,5,33.878269,-79.768759
-1366,Lake Elmo,27,4,NULL,NULL
+1366,Lake Elmo,27,4,,
 1367,Lake Forest,6,8,33.61932,-117.704674
 1368,Lake Forest,17,3,42.250456,-87.830777
 1369,Lake Havasu City,4,6,34.475275,-114.328134
@@ -1389,7 +1389,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1388,Lancaster,42,2,40.038254,-76.354069
 1389,Lancaster,45,5,34.736535,-80.787268
 1390,Lancaster,48,6,32.625686,-96.763421
-1391,Land O'Lakes,12,5,NULL,NULL
+1391,Land O'Lakes,12,5,,
 1392,Landover,24,2,38.949933,-76.866393
 1393,Langhorne,42,2,40.165809,-74.909509
 1394,Langley,53,8,48.00712,-122.460161
@@ -1461,7 +1461,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1460,Lincoln,31,4,40.796768,-96.651532
 1461,Lincoln,44,1,41.936234,-71.48077
 1462,Lincoln University,42,2,39.807725,-75.928273
-1463,Lincolnton,37,5,NULL,NULL
+1463,Lincolnton,37,5,,
 1464,Lincroft,34,2,40.324906,-74.132746
 1465,Linden,34,2,40.636528,-74.265525
 1466,Lindsborg,20,4,38.5786,-97.673173
@@ -1488,7 +1488,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1487,Logan,49,7,41.756188,-111.850619
 1488,Loma Linda,6,8,34.050975,-117.261086
 1489,Lombard,17,3,41.861919,-88.013153
-1490,Lomita,6,8,NULL,NULL
+1490,Lomita,6,8,,
 1491,London,21,5,37.10299,-84.066427
 1492,Lone Tree,8,7,39.55177,-104.873461
 1493,Long Beach,6,8,33.782752,-118.1123
@@ -1535,7 +1535,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1534,Madison,55,3,43.12078,-89.328311
 1535,Madison,1,5,34.6813,-86.752491
 1536,Madison,28,5,32.488133,-90.124798
-1537,Madison,18,3,NULL,NULL
+1537,Madison,18,3,,
 1538,Madison Heights,26,3,42.526138,-83.106727
 1539,Madisonville,21,5,37.362661,-87.512137
 1540,Madisonville,47,5,35.557691,-84.364631
@@ -1626,7 +1626,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1625,Melville,36,2,40.779377,-73.412643
 1626,Memphis,47,5,35.138415,-90.027501
 1627,Mena,5,5,34.590793,-94.2197
-1628,Mendenhall,28,5,NULL,NULL
+1628,Mendenhall,28,5,,
 1629,Mendota Heights,27,4,44.86523,-93.163291
 1630,Menomonie,55,3,44.88861,-91.929461
 1631,Mentor,39,3,41.714918,-81.341918
@@ -1674,7 +1674,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1673,Mill Creek,42,2,40.434249,-77.927438
 1674,Milledgeville,13,5,33.082787,-83.231962
 1675,Millersville,42,2,39.99813,-76.355091
-1676,Millersville,24,2,NULL,NULL
+1676,Millersville,24,2,,
 1677,Milligan College,47,5,36.30036,-82.29499
 1678,Milpitas,6,8,37.410897,-121.893911
 1679,Milton,12,5,30.646762,-87.100567
@@ -1697,7 +1697,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1696,Mobile,1,5,30.793247,-88.128934
 1697,Moca,72,9,18.38728,-67.110123
 1698,Modesto,6,8,37.645217,-120.99689
-1699,Mokena,17,3,NULL,NULL
+1699,Mokena,17,3,,
 1700,Moline,17,3,41.475983,-90.449497
 1701,Monaca,42,2,40.654825,-80.305272
 1702,Monessen,42,2,40.161692,-79.88832
@@ -1780,7 +1780,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1779,Murphy,37,5,35.067021,-83.966476
 1780,Murray,21,5,36.61241,-88.323493
 1781,Murray,49,7,40.644877,-111.888447
-1782,Murrieta,6,8,NULL,NULL
+1782,Murrieta,6,8,,
 1783,Muscle Shoals,1,5,34.739567,-87.67733
 1784,Muskegon,26,3,43.244133,-86.196717
 1785,Muskogee,40,6,35.77707,-95.335337
@@ -1797,7 +1797,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1796,Nashotah,55,3,43.093621,-88.414635
 1797,Nashua,33,1,42.776362,-71.514293
 1798,Nashville,47,5,36.147005,-86.663047
-1799,Natchez,28,5,NULL,NULL
+1799,Natchez,28,5,,
 1800,Natchitoches,22,5,31.750675,-93.097715
 1801,National City,6,8,32.676762,-117.090235
 1802,Nederland,48,6,29.982161,-93.997457
@@ -1921,7 +1921,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1920,Notre Dame,18,3,41.699982,-86.253668
 1921,Novi,26,3,42.498643,-83.442576
 1922,Nutley,34,2,40.810742,-74.144192
-1923,Nutter Fort,54,5,NULL,NULL
+1923,Nutter Fort,54,5,,
 1924,Nyack,36,2,41.086425,-73.931106
 1925,Oak Brook,17,3,41.84493,-87.940271
 1926,Oak Forest,17,3,41.603863,-87.771567
@@ -2000,12 +2000,12 @@ city_id,city_name,state_id,region_id,latitude,longitude
 1999,Painesville,39,3,41.717841,-81.251817
 2000,Palatine,17,3,42.081356,-88.069391
 2001,Palatka,12,5,29.647195,-81.681137
-2002,Palm Beach Gardens,12,5,NULL,NULL
+2002,Palm Beach Gardens,12,5,,
 2003,Palm Coast,12,5,29.475547,-81.212332
 2004,Palm Desert,6,8,33.729555,-116.403928
 2005,Palm Springs,6,8,33.81339,-116.546814
 2006,Palm Springs,12,5,26.636271,-80.087289
-2007,Palmdale,6,8,NULL,NULL
+2007,Palmdale,6,8,,
 2008,Palmer,2,8,61.59843,-149.111341
 2009,Palo Alto,6,8,37.430325,-122.10866
 2010,Palos Heights,17,3,41.669189,-87.784157
@@ -2049,7 +2049,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2048,Peoria,17,3,40.697605,-89.61462
 2049,Peoria,4,6,33.613005,-112.237552
 2050,Pepper Pike,39,3,41.494971,-81.466716
-2051,Perkasie,42,2,NULL,NULL
+2051,Perkasie,42,2,,
 2052,Perkinston,28,5,30.779349,-89.144339
 2053,Perry,12,5,30.077954,-83.565783
 2054,Perrysburg,39,3,41.588272,-83.536023
@@ -2084,7 +2084,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2083,Pittsfield,25,1,42.460877,-73.318843
 2084,Plainfield,34,2,40.604953,-74.417412
 2085,Plainfield,50,1,44.27912,-72.437252
-2086,Plainfield,18,3,NULL,NULL
+2086,Plainfield,18,3,,
 2087,Plainview,48,6,34.186673,-101.729564
 2088,Plainwell,26,3,42.508058,-85.520711
 2089,Plano,48,6,33.026326,-96.795198
@@ -2100,7 +2100,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2099,Plymouth,55,3,43.841863,-87.884956
 2100,Plymouth,27,4,44.994699,-93.501957
 2101,Plymouth,25,1,41.958456,-70.704511
-2102,Plymouth,26,3,NULL,NULL
+2102,Plymouth,26,3,,
 2103,Plymouth Meeting,42,2,40.106056,-75.281853
 2104,Pocahontas,5,5,36.239793,-90.951033
 2105,Pocatello,16,7,42.864108,-112.429084
@@ -2125,7 +2125,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2124,Port Huron,26,3,42.979494,-82.428717
 2125,Port Richey,12,5,28.305144,-82.702215
 2126,Port Saint Lucie,12,5,27.3016,-80.303921
-2127,Port St Lucie,12,5,NULL,NULL
+2127,Port St Lucie,12,5,,
 2128,Portage,26,3,42.220356,-85.575426
 2129,Portales,35,6,34.179015,-103.348046
 2130,Porterville,6,8,36.049256,-119.014368
@@ -2157,7 +2157,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2156,Pryor,40,6,36.309116,-95.425056
 2157,Pueblo,8,7,38.263458,-104.636396
 2158,Pulaski,47,5,35.200662,-87.035085
-2159,Pulaski,42,2,NULL,NULL
+2159,Pulaski,42,2,,
 2160,Pullman,53,8,46.730448,-117.158168
 2161,Purchase,36,2,41.031054,-73.718316
 2162,Putney,50,1,42.977172,-72.512549
@@ -2188,7 +2188,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2187,Raymore,29,4,38.811837,-94.467206
 2188,Reading,42,2,40.360248,-75.910152
 2189,Red Bud,17,3,38.289727,-89.948787
-2190,Red Wing,27,4,NULL,NULL
+2190,Red Wing,27,4,,
 2191,Redding,6,8,40.59709,-122.387231
 2192,Redlands,6,8,34.063571,-117.163847
 2193,Redmond,53,8,47.68938,-122.150181
@@ -2206,7 +2206,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2205,Rhinelander,55,3,45.609583,-89.425123
 2206,Richardson,48,6,32.989432,-96.748371
 2207,Richfield,27,4,44.865436,-93.297366
-2208,Richfield,49,7,NULL,NULL
+2208,Richfield,49,7,,
 2209,Richland,53,8,46.22598,-119.245931
 2210,Richlands,51,5,37.006196,-81.796682
 2211,Richmond,18,3,39.8265,-84.9099
@@ -2242,7 +2242,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2241,Rocklin,6,8,38.819494,-121.292968
 2242,Rockville,24,2,39.09793,-77.159471
 2243,Rockville Centre,36,2,40.68597,-73.626278
-2244,Rocky Hill,9,1,NULL,NULL
+2244,Rocky Hill,9,1,,
 2245,Rocky Mount,37,5,35.976771,-77.896536
 2246,Rocky River,39,3,41.482182,-81.837528
 2247,Rogers,5,5,36.334163,-94.17008
@@ -2304,7 +2304,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2303,Saint Robert,29,4,37.814903,-92.14396
 2304,Saint Rose,22,5,29.981145,-90.281227
 2305,Saipan,69,9,15.152247,145.721733
-2306,Salamanca,36,2,NULL,NULL
+2306,Salamanca,36,2,,
 2307,Salem,25,1,42.502879,-70.889321
 2308,Salem,39,3,40.867236,-80.860091
 2309,Salem,41,8,44.941673,-123.039591
@@ -2339,7 +2339,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2338,San Marcos,48,6,29.889202,-97.936392
 2339,San Mateo,6,8,37.534357,-122.336078
 2340,San Pablo,6,8,37.968623,-122.342386
-2341,San Pedro,6,8,NULL,NULL
+2341,San Pedro,6,8,,
 2342,San Rafael,6,8,37.980014,-122.514654
 2343,San Sebastian,72,9,18.334858,-66.990909
 2344,Sanborn,36,2,43.147025,-78.877008
@@ -2364,7 +2364,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2363,Santa Rosa,6,8,38.467789,-122.728642
 2364,Santee,6,8,32.84281,-116.978151
 2365,Santurce,72,9,18.450225,-66.073372
-2366,Sapulpa,40,6,NULL,NULL
+2366,Sapulpa,40,6,,
 2367,Saranac Lake,36,2,44.318645,-74.119981
 2368,Sarasota,12,5,27.35963,-82.548598
 2369,Saratoga,6,8,37.263133,-122.009701
@@ -2393,7 +2393,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2392,Seguin,48,6,29.569092,-97.964447
 2393,Selden,36,2,40.848963,-73.056165
 2394,Selinsgrove,42,2,40.79774,-76.87521
-2395,Sellersburg,18,3,NULL,NULL
+2395,Sellersburg,18,3,,
 2396,Sells,4,6,31.991237,-111.716249
 2397,Selma,1,5,32.42443,-87.023531
 2398,Selma,6,8,36.57043,-119.611831
@@ -2439,7 +2439,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2438,Silver  Spring,24,2,39.042404,-77.030566
 2439,Silver City,35,6,32.776962,-108.284768
 2440,Silver Spring,24,2,38.999774,-77.001486
-2441,Simi Valley,6,8,NULL,NULL
+2441,Simi Valley,6,8,,
 2442,Sioux Center,19,4,43.08396,-96.166319
 2443,Sioux City,19,4,42.526919,-96.42696
 2444,Sioux Falls,46,4,43.525939,-96.738507
@@ -2521,9 +2521,9 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2520,St. Benedict,22,5,30.526778,-90.113621
 2521,St. Charles,29,4,38.788205,-90.539643
 2522,St. Cloud,27,4,45.556553,-94.209068
-2523,St. Croix,78,9,NULL,NULL
+2523,St. Croix,78,9,,
 2524,St. George,49,7,37.10809,-113.555601
-2525,St. Helena,6,8,NULL,NULL
+2525,St. Helena,6,8,,
 2526,St. Louis,29,4,38.55748,-90.390981
 2527,St. Mary's City,24,2,38.188615,-76.425706
 2528,St. Meinrad,18,3,38.166046,-86.810417
@@ -2533,7 +2533,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2532,Stamford,9,1,41.05587,-73.542747
 2533,Standish,23,1,43.82651,-70.483486
 2534,Stanford,6,8,37.426967,-122.168826
-2535,Staples,27,4,NULL,NULL
+2535,Staples,27,4,,
 2536,Starke,12,5,29.952134,-82.123082
 2537,State College,42,2,40.787437,-77.856
 2538,Staten Island,36,2,40.603949,-74.148701
@@ -2620,7 +2620,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2619,Teterboro,34,2,40.841265,-74.071874
 2620,Tewksbury,25,1,42.611476,-71.286844
 2621,Texarkana,48,6,33.49561,-94.10398
-2622,Texarkana,5,5,NULL,NULL
+2622,Texarkana,5,5,,
 2623,Texas City,48,6,29.395514,-94.999739
 2624,Thatcher,4,6,32.840719,-109.761664
 2625,The Dalles,41,8,45.590724,-121.190197
@@ -2651,7 +2651,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2650,Toppenish,53,8,46.374571,-120.395287
 2651,Torrance,6,8,33.885586,-118.326623
 2652,Torrington,56,7,42.079354,-104.190823
-2653,Torrington,9,1,NULL,NULL
+2653,Torrington,9,1,,
 2654,Tougaloo,28,5,32.402719,-90.159405
 2655,Towanda,42,2,41.80181,-76.485951
 2656,Towson,24,2,39.401822,-76.572434
@@ -2682,7 +2682,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2681,Turnersville,34,2,39.75546,-75.045231
 2682,Tuscaloosa,1,5,33.2144,-87.545766
 2683,Tuskegee,1,5,32.431021,-85.710315
-2684,Tustin,6,8,NULL,NULL
+2684,Tustin,6,8,,
 2685,Twin Falls,16,7,42.593695,-114.461693
 2686,Twinsburg,39,3,41.331292,-81.46369
 2687,Tyler,48,6,32.314724,-95.249096
@@ -2751,7 +2751,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2750,W Bloomfield,26,3,42.478209,-83.183286
 2751,Waco,13,5,33.691657,-85.183666
 2752,Waco,48,6,31.545956,-97.119359
-2753,Wadena,27,4,NULL,NULL
+2753,Wadena,27,4,,
 2754,Wadley,1,5,33.128448,-85.57345
 2755,Wahpeton,38,4,46.275964,-96.607896
 2756,Waite Park,27,4,45.548631,-94.216276
@@ -2773,7 +2773,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2772,Warr Acres,40,6,35.54778,-97.610871
 2773,Warren,26,3,42.507039,-82.97373
 2774,Warren,39,3,41.279153,-80.837363
-2775,Warrendale,42,2,NULL,NULL
+2775,Warrendale,42,2,,
 2776,Warrensburg,29,4,38.755882,-93.737445
 2777,Warrensville Heights,39,3,41.435166,-81.503483
 2778,Warwick,44,1,41.712817,-71.481509
@@ -2791,7 +2791,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2790,Watertown,36,2,43.987465,-75.940004
 2791,Watertown,46,4,44.901152,-97.094917
 2792,Watertown,55,3,43.195709,-88.735055
-2793,Watertown,9,1,NULL,NULL
+2793,Watertown,9,1,,
 2794,Waterville,23,1,44.564211,-69.66337
 2795,Watsonville,6,8,36.931833,-121.767991
 2796,Waukegan,17,3,42.371,-87.870451
@@ -2905,7 +2905,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2904,Williamstown,25,1,42.711669,-73.205888
 2905,Williamsville,36,2,42.974993,-78.696761
 2906,Willimantic,9,1,41.721673,-72.218753
-2907,Willingboro,34,2,NULL,NULL
+2907,Willingboro,34,2,,
 2908,Williston,38,4,48.158603,-103.613066
 2909,Willmar,27,4,45.13832,-95.073054
 2910,Willoughby,39,3,41.609759,-81.524375
@@ -2948,7 +2948,7 @@ city_id,city_name,state_id,region_id,latitude,longitude
 2947,Woodland Park,34,2,40.90208,-74.188765
 2948,Woodridge,17,3,41.755883,-88.043882
 2949,Woodward,40,6,36.43489,-99.386572
-2950,Woonsocket,44,1,NULL,NULL
+2950,Woonsocket,44,1,,
 2951,Wooster,39,3,40.775287,-81.9225
 2952,Worcester,25,1,42.295435,-71.828387
 2953,Worthington,27,4,43.63189,-95.602411
