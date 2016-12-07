@@ -30,7 +30,7 @@
 
 12. Completion_Type.csv -> Student_Type.csv
 
-13. Enrollment.csv && New_Enrollment.csv
+13. Enrollment.csv
 
 ## TODO Tables
 
@@ -47,10 +47,6 @@ Completion, Student, Debt
 4. PrivacySuppressed in Family. Should we use NULL?
 
 5. Should we use NULL or blank?
-
-6. Enrollment no gender?
-
-7. PC for race?
 
 ## Reminder
 
