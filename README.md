@@ -55,3 +55,5 @@ Completion, Student, Debt
 2. All NULL or all PrivacySuppressed rows in Family deleted.
 
 3. Latitude and Longitutde doesn't rely on school anymore but on city.
+
+4. In Completion, year -> less_than_4yr (0 or 1)
