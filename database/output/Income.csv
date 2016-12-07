@@ -1,1 +1,6 @@
-income_level,detail1,"less than $30,000 in nominal family income"2,"between $30,000 and $75,000 in nominal family income"3,"above $75,000 in nominal family income"
+income_level,detail
+1,"between $0-30,000"
+2,"between $30,001-$48,000"
+3,"between $48,001-$75,000"
+4,"between $75,001-$110,000"
+5,"$110,001+"
