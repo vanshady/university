@@ -20,9 +20,13 @@
 
 7. City.csv
 
+8. Control.csv
+
+9. Level.csv
+
 ## TODO Tables
 
-City, State, Control, Level， Enrollment, Tuition, Completion, Completion_type, Student, Income, Debt
+Tuition, Completion, Completion_type, Student, Income, Debt
 
 ## TODO
 
