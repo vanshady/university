@@ -32,9 +32,11 @@
 
 13. Enrollment.csv
 
+14. Completion.csv
+
 ## TODO Tables
 
-Completion, Student, Debt
+Student, Debt
 
 ## TODO
 
