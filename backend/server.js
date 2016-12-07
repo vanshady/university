@@ -17,18 +17,24 @@ const pool = mysql.createPool({
   database: config.database,
 });
 
+pool.getConnection((err) => {
+  if (err) throw err;
+
+  console.log(`Database ${config.host} ${config.database} connected!`);
+});
+
 app.use(cors());
 
 app.get('/university_list', (req, res) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
 
-    connection.query('SELECT name FROM university', (e, rows) => {
+    connection.query('SELECT institution_name FROM University', (e, rows) => {
       const data = [];
       if (e) throw e;
 
       for (let i = 0; i < rows.length; i += 1) {
-        data.push(rows[i].name);
+        data.push(rows[i].institution_name);
       }
       connection.release();
       res.json(data);
@@ -41,7 +47,7 @@ app.get('/university/:uName', (req, res) => {
 
 
   pool.getConnection((err, connection) => {
-    connection.query(`SELECT * FROM university WHERE NAME = "${uName}";`,
+    connection.query(`SELECT * FROM University WHERE institution_name = "${uName}";`,
       (e, rows) => {
         if (e) throw e;
 
