@@ -14,7 +14,11 @@
 
 4. Family.csv
 
-5. University.csv (city needs to be replaced by city_id)
+5. University.csv
+
+6. State.csv
+
+7. City.csv
 
 ## TODO Tables
 
@@ -37,3 +41,5 @@ City, State, Control, Level， Enrollment, Tuition, Completion, Completion_type,
 1. All NULL rows in Admission deleted.
 
 2. All NULL or all PrivacySuppressed rows in Family deleted.
+
+3. Latitude and Longitutde doesn't rely on school anymore but on city.
