@@ -46,10 +46,8 @@
 
 ## Reminder
 
-1. Latitude and Longitutde doesn't rely on school anymore but on city.
+1. Latitude and Longitutde doesn't rely on school any more but on city.
 
 1. In Completion, year -> less_than_4yr (0 or 1)
 
 1. Added a column `student_type` in `Income.csv`
-
-1. Should update table names and according column names.
