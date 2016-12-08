@@ -1,0 +1,39 @@
+1. List the names of the universities
+
+2. List the information of a specified university
+
+3. List the address information of the university
+
+4. List the difference of the in-state and out-state tuition of a specified school
+
+5. List the average difference of the in-state and out-state tuition of public schools
+
+6. List the difference of the instructional_expenditures and tuition of a specified school
+
+7. List the average difference of the instructional_expenditures and tuition of private non-profit schools
+
+8. List the completion rate of different type of people in a specified university
+
+9. List the average percentage of students of different type of a specified control of schools, in decreasing order
+
+10. List the average debt percentage of students of different type of a specified control of schools, in decreasing order
+
+11. List the average median-family-income of the three controls of schools, in decreasing order
+
+12. List the school name, admission rate, average SAT scores of all school, first in ascending admission rate, then in decreasing SAT scores. 
+
+13. List the school name of all schools that have an average SAT scores larger than a specified score.
+
+14. List all the schools that is a specified control
+
+15. List all the schools that is in a specified state
+
+16. List the distance of two schools(based on city)
+
+17. List the degrees and percentage of a specified school, first in decreasing percentage, then in alphabetical order
+
+18. List the race and percentage of the student in a specified university, in decreasing percentage order
+
+19. List the school names, and the percentage of student of a specified race, in decreasing percentage order
+
+20. List all the universities that have been closed 
