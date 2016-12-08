@@ -45,7 +45,6 @@ app.get('/university_list', (req, res) => {
 app.get('/university/:uName', (req, res) => {
   const uName = req.params.uName;
 
-
   pool.getConnection((err, connection) => {
     connection.query(`SELECT * FROM University WHERE name = "${uName}";`,
       (e, rows) => {
