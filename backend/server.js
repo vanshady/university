@@ -37,7 +37,7 @@ app.get('/university_list', (req, res) => {
         data.push(rows[i].name);
       }
       connection.release();
-      res.json({ university_list: data });
+      res.json({ universities: data });
     });
   });
 });

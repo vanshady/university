@@ -21,7 +21,7 @@ class SearchCard extends React.Component {
             .end((err, res) => {
                 if (res) {
                     self.setState({
-                        universities: JSON.parse(res.text).university_list,
+                        universities: JSON.parse(res.text).universities,
                     });
                 }
             });
