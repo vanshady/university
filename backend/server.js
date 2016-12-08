@@ -29,15 +29,15 @@ app.get('/university_list', (req, res) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
 
-    connection.query('SELECT institution_name FROM University', (e, rows) => {
+    connection.query('SELECT name FROM University', (e, rows) => {
       const data = [];
       if (e) throw e;
 
       for (let i = 0; i < rows.length; i += 1) {
-        data.push(rows[i].institution_name);
+        data.push(rows[i].name);
       }
       connection.release();
-      res.json(data);
+      res.json({ university_list: data });
     });
   });
 });
@@ -47,7 +47,7 @@ app.get('/university/:uName', (req, res) => {
 
 
   pool.getConnection((err, connection) => {
-    connection.query(`SELECT * FROM University WHERE institution_name = "${uName}";`,
+    connection.query(`SELECT * FROM University WHERE name = "${uName}";`,
       (e, rows) => {
         if (e) throw e;
 

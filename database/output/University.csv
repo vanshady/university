@@ -1,4 +1,4 @@
-unit_id,institution_name,city_id,zip,url,main_campus,num_branches,CONTROL,historically_black,predominantly_black,men_only,women_only,alias,level_id,opearting
+unit_id,name,city_id,zip,url,main_campus,num_branches,control_id,historically_black,predominantly_black,men_only,women_only,alias,level_id,operating
 100654,Alabama A & M University,1871,35762,www.aamu.edu/,1,1,1,1,0,0,0,AAMU,1,1
 100663,University of Alabama at Birmingham,231,35294-0110,www.uab.edu,1,1,1,0,0,0,0,,1,1
 100690,Amridge University,1719,36117-3553,www.amridgeuniversity.edu,1,1,2,0,0,0,0,Southern Christian University |Regions University,1,1

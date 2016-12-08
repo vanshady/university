@@ -1,19 +1,19 @@
 CREATE TABLE University (
     `unit_id` INT,
-    `institution_name` VARCHAR(93) CHARACTER SET utf8,
+    `name` VARCHAR(93) CHARACTER SET utf8,
     `city_id` INT,
     `zip` VARCHAR(10) CHARACTER SET utf8,
     `url` VARCHAR(124) CHARACTER SET utf8,
     `main_campus` INT,
     `num_branches` INT,
-    `CONTROL` INT,
+    `control_id` INT,
     `historically_black` INT,
     `predominantly_black` INT,
     `men_only` INT,
     `women_only` INT,
     `alias` VARCHAR(680) CHARACTER SET utf8,
     `level_id` INT,
-    `opearting` INT
+    `operating` INT
 );
 INSERT INTO University VALUES (100654,'Alabama A & M University',1871,'35762','www.aamu.edu/',1,1,1,1,0,0,0,'AAMU',1,1);
 INSERT INTO University VALUES (100663,'University of Alabama at Birmingham',231,'35294-0110','www.uab.edu',1,1,1,0,0,0,0,NULL,1,1);
