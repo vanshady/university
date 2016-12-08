@@ -10,39 +10,25 @@
 
 ## Extracted Tables
 
-1. Admission.csv
-
-1. Degree.csv
-
-1. Degree_Percentage.csv
-
-1. Family.csv
-
-1. University.csv
-
-1. State.csv
-
-1. City.csv
-
-1. Control.csv
-
-1. Level.csv
-
-1. Tuition.csv
-
-1. Income.csv
-
-1. Completion_Type.csv -> Student_Type.csv
-
-1. Enrollment.csv
-
-1. Completion.csv
-
-1. Debt.csv
-
-1. Student.csv
-
-1. Debt.csv
+```
+Admission.csv
+Degree.csv
+Degree_Percentage.csv
+Family.csv
+University.csv
+State.csv
+City.csv
+Control.csv
+Level.csv
+Tuition.csv
+Income.csv
+Completion_Type.csv -> Student_Type.csv
+Enrollment.csv
+Completion.csv
+Debt.csv
+Student.csv
+Debt.csv
+```
 
 ## Reminder
 
