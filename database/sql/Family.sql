@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Family;
 CREATE TABLE Family (
     `unit_id` INT,
     `par_ed_hs` NUMERIC(10, 9),

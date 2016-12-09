@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Control;
 CREATE TABLE Control (
     `control_id` INT,
     `detail` VARCHAR(18) CHARACTER SET utf8

@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Debt;
 CREATE TABLE Debt (
     `unit_id` INT,
     `data` NUMERIC(25, 19),

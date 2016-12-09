@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Student;
 CREATE TABLE Student (
     `unit_id` INT,
     `percentage` NUMERIC(11, 10),

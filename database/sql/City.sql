@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS City;
 CREATE TABLE City (
     `city_id` INT,
     `city_name` VARCHAR(24) CHARACTER SET utf8,

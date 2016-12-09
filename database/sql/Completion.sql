@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Completion;
 CREATE TABLE Completion (
     `unit_id` INT,
     `percentage` NUMERIC(5, 4),

@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Admission;
 CREATE TABLE Admission (
     `unit_id` INT,
     `admission_rate` NUMERIC(5, 4),

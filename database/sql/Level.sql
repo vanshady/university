@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Level;
 CREATE TABLE Level (
     `level_id` INT,
     `detail` VARCHAR(16) CHARACTER SET utf8

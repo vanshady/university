@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Tuition;
 CREATE TABLE Tuition (
     `unit_id` INT,
     `in_state` INT,

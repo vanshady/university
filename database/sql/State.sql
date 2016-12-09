@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS State;
 CREATE TABLE State (
     `state_id` INT,
     `state_name` VARCHAR(30) CHARACTER SET utf8,

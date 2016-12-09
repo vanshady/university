@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS University;
 CREATE TABLE University (
     `unit_id` INT,
     `name` VARCHAR(93) CHARACTER SET utf8,

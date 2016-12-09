@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Student_Type;
 CREATE TABLE Student_Type (
     `type_id` VARCHAR(14) CHARACTER SET utf8,
     `detail` VARCHAR(33) CHARACTER SET utf8

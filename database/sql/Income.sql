@@ -1,3 +1,5 @@
+USE university;
+DROP TABLE IF EXISTS Income;
 CREATE TABLE Income (
     `income_level` INT,
     `detail` VARCHAR(24) CHARACTER SET utf8,
