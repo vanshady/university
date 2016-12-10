@@ -6,7 +6,7 @@ CREATE TABLE Family (
     `par_ed_ps` NUMERIC(10, 9),
     `avg_inc` NUMERIC(13, 7),
     `med_inc` NUMERIC(13, 7),
-    `acg_inc_dep` NUMERIC(12, 6),
+    `avg_inc_dep` NUMERIC(12, 6),
     `avg_inc_ind` NUMERIC(13, 8)
 );
 INSERT INTO Family VALUES (100654,0.378895815,0.605966162,30235.73401,21595.33186,33370.0625,9184.131398);
