@@ -1,4 +1,4 @@
-USE university;
+USE University;
 DROP TABLE IF EXISTS University;
 CREATE TABLE University (
     `unit_id` INT,
@@ -6,16 +6,16 @@ CREATE TABLE University (
     `city_id` INT,
     `zip` VARCHAR(10) CHARACTER SET utf8,
     `url` VARCHAR(124) CHARACTER SET utf8,
-    `main_campus` INT,
+    `main_campus` BOOL,
     `num_branches` INT,
     `control_id` INT,
-    `historically_black` INT,
-    `predominantly_black` INT,
-    `men_only` INT,
-    `women_only` INT,
+    `historically_black` BOOL,
+    `predominantly_black` BOOL,
+    `men_only` BOOL,
+    `women_only` BOOL,
     `alias` VARCHAR(680) CHARACTER SET utf8,
     `level_id` INT,
-    `operating` INT
+    `operating` BOOL
 );
 INSERT INTO University VALUES (100654,'Alabama A & M University',1871,'35762','www.aamu.edu/',1,1,1,1,0,0,0,'AAMU',1,1);
 INSERT INTO University VALUES (100663,'University of Alabama at Birmingham',231,'35294-0110','www.uab.edu',1,1,1,0,0,0,0,NULL,1,1);
