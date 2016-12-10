@@ -1,8 +1,11 @@
-1. List the names of the universities
+1. List the names of the universities in alphabetical order
+	AllNames
 
 2. List the information of a specified university
+	UniversityInfo
 
 3. List the address information of the university
+	UniversityAddress
 
 4. List the difference of the in-state and out-state tuition of a specified school
 

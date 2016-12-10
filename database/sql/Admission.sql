@@ -1,4 +1,4 @@
-USE university;
+USE heroku_8a31c5b29a98ba5;
 DROP TABLE IF EXISTS Admission;
 CREATE TABLE Admission (
     `unit_id` INT,

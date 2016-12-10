@@ -1,8 +1,8 @@
-USE university;
+USE heroku_8a31c5b29a98ba5;
 DROP TABLE IF EXISTS Degree;
 CREATE TABLE Degree (
-    `DEGREE_ID` INT,
-    `DEGREE_NAME` VARCHAR(80) CHARACTER SET utf8
+    `degree_id` INT,
+    `degree_name` VARCHAR(80) CHARACTER SET utf8
 );
 INSERT INTO Degree VALUES (01,'Agriculture, Agriculture Operations, And Related Sciences');
 INSERT INTO Degree VALUES (03,'Natural Resources And Conservation');
