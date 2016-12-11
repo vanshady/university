@@ -16,13 +16,14 @@ class SearchCard extends React.Component {
         };
 
         this.onSearched = this.onSearched.bind(this);
+        this.onUpdateInput = this.onUpdateInput.bind(this);
         const self = this;
         request
-            .get(self.props.url + '/university_list')
+            .get(self.props.url + '/search_name/')
             .end((err, res) => {
                 if (res) {
                     self.setState({
-                        universities: JSON.parse(res.text).universities,
+                        universities: JSON.parse(res.text),
                     });
                 }
             });
@@ -30,9 +31,9 @@ class SearchCard extends React.Component {
 
     onSearched(university) {
         const self = this;
-        function requestUniversity(name, done) {
+        function requestUniversity(done) {
             request
-                .get(self.props.url + `/university/${name}`)
+                .get(self.props.url + `/university/${university.unit_id}`)
                 .end((err, res) => {
                     if (res) {
                         done(err, res);
@@ -54,7 +55,20 @@ class SearchCard extends React.Component {
             university: '',
             expanded: true,
         });
-        this.req = requestUniversity(university, handleResponse);
+        this.req = requestUniversity(handleResponse);
+    }
+
+    onUpdateInput(text) {
+        const self = this;
+        request
+            .get(self.props.url + '/search_name/' + text)
+            .end((err, res) => {
+                if (res) {
+                    self.setState({
+                        universities: JSON.parse(res.text),
+                    });
+                }
+            });
     }
 
     renderUniversity() {
@@ -87,6 +101,7 @@ class SearchCard extends React.Component {
             <SearchBar
               onSearched={this.onSearched}
               universities={this.state.universities}
+              onUpdateInput={this.onUpdateInput}
               hintText="Which university are you interested in?"
             />
 

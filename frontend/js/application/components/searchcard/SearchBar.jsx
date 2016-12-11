@@ -27,12 +27,14 @@ class SearchBar extends React.Component {
             <AutoComplete
               hintText={this.props.hintText ? this.props.hintText : 'Search'}
               dataSource={this.props.universities}
+              dataSourceConfig={{ text: 'name', value: 'name' }}
               fullWidth
-              filter={(searchText, key) => searchText !== '' && key.substr(0, searchText.length) === searchText}
+              filter={() => true}
               maxSearchResults={10}
               style={inputStyle}
               underlineStyle={underlineStyle}
               onNewRequest={this.newRequest}
+              onUpdateInput={this.props.onUpdateInput}
             />
           </div>);
     }
@@ -40,7 +42,8 @@ class SearchBar extends React.Component {
 
 SearchBar.propTypes = {
     onSearched: React.PropTypes.func,
-    universities: React.PropTypes.arrayOf(React.PropTypes.string),
+    onUpdateInput: React.PropTypes.func,
+    universities: React.PropTypes.arrayOf(React.PropTypes.object),
     hintText: React.PropTypes.string,
 };
 
