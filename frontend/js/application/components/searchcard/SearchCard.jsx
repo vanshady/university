@@ -14,10 +14,11 @@ class SearchCard extends React.Component {
             universities: [],
             expanded: true,
         };
+
         this.onSearched = this.onSearched.bind(this);
         const self = this;
         request
-            .get('http://127.0.0.1:3000/university_list')
+            .get(self.props.url + '/university_list')
             .end((err, res) => {
                 if (res) {
                     self.setState({
@@ -31,7 +32,7 @@ class SearchCard extends React.Component {
         const self = this;
         function requestUniversity(name, done) {
             request
-                .get(`http://127.0.0.1:3000/university/${name}`)
+                .get(self.props.url + `/university/${name}`)
                 .end((err, res) => {
                     if (res) {
                         done(err, res);
@@ -98,6 +99,10 @@ class SearchCard extends React.Component {
 
 SearchCard.childContextTypes = {
     muiTheme: React.PropTypes.object,
+};
+
+SearchCard.PropTypes = {
+    url: React.PropTypes.string,
 };
 
 export default SearchCard;

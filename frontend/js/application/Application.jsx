@@ -16,7 +16,7 @@ class Application extends React.Component {
           <div>
             <Header />
             <Panel>
-              <SearchCard />
+              <SearchCard url="https://university-backend.herokuapp.com/" />
               <div />
             </Panel>
             {/* <Footer/> */}
