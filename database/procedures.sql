@@ -4,7 +4,7 @@ DROP PROCEDURE IF EXISTS AllNames //
 CREATE PROCEDURE AllNames()
 BEGIN 
 IF EXISTS (SELECT name FROM University) THEN
-SELECT name,unit_id FROM University ORDER BY name ASC;
+SELECT name FROM University ORDER BY name ASC;
 ELSE
 SELECT 'ERROR: SSN does not exist' AS 'Result';
 END IF;
