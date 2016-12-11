@@ -1,4 +1,3 @@
-USE heroku_8a31c5b29a98ba5;
 DROP TABLE IF EXISTS Debt;
 CREATE TABLE Debt (
     `unit_id` INT,

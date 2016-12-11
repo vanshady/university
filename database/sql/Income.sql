@@ -1,4 +1,3 @@
-USE heroku_8a31c5b29a98ba5;
 DROP TABLE IF EXISTS Income;
 CREATE TABLE Income (
     `income_level` INT,
