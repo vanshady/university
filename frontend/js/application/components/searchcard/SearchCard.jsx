@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
-import { teal300 } from 'material-ui/styles/colors';
+import { amber400 } from 'material-ui/styles/colors';
 import SearchBar from './SearchBar';
 
 const request = require('superagent');
@@ -100,19 +100,64 @@ class SearchCard extends React.Component {
             if (university === errorMessage) {
                 return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
             }
+
             let key = 0;
-            Object.keys(university).forEach((prop) => {
-                if (typeof university[prop] === 'boolean') {
-                    if (university[prop]) {
-                        res.push(<Chip style={{ margin: 4 }} backgroundColor={teal300} key={key}><b>{ prop }: </b> true</Chip>);
-                    } else {
-                        res.push(<Chip style={{ margin: 4 }} backgroundColor={teal300} key={key}><b>{ prop }: </b> false</Chip>);
-                    }
-                } else if (university[prop] && university[prop] !== 'NULL') {
-                    res.push(<Chip style={{ margin: 4 }} backgroundColor={teal300} key={key}><b>{ prop }: </b>{university[prop]}</Chip>);
-                }
+
+            const createChip = (children) => {
                 key += 1;
-            });
+                res.push(<Chip style={{ margin: 4 }} backgroundColor={amber400} key={key - 1}>{ children }</Chip>);
+            };
+
+            if (university.alias && university.alias.length > 0) {
+                createChip(<div><b>alias:</b> {university.alias}</div>);
+            }
+
+            if (university.city_name && university.city_name.length > 0) {
+                createChip(<div><b>location:</b> {university.city_name}</div>);
+            }
+
+            if (university.url && university.url.length > 0) {
+                createChip(<a href={'http://' + university.url}>website</a>);
+            }
+
+            if (university.zip && university.zip.length > 0) {
+                createChip(<div><b>zip:</b> {university.zip}</div>);
+            }
+
+            if (university.main_campus && typeof university.main_campus === 'boolean') {
+                if (university.main_campus) createChip(<b>main campus</b>);
+                else createChip(<b>not main campus</b>);
+            }
+
+            if (university.num_branches && typeof university.num_branches === 'number') {
+                if (university.num_branches > 1) {
+                    createChip(<b>{university.num_branches} branches</b>);
+                } else if (university.num_branches === 1) {
+                    createChip(<b>{university.num_branches} branch</b>);
+                } else if (university.num_branches === 0) {
+                    createChip(<b>no branch</b>);
+                }
+            }
+
+            if (university.historically_black === true) {
+                createChip(<b>historically black</b>);
+            }
+
+            if (university.predominatly_black === true) {
+                createChip(<b>predominantly black</b>);
+            }
+
+            if (university.men_only === true) {
+                createChip(<b>men only</b>);
+            }
+
+            if (university.women_only === true) {
+                createChip(<b>women only</b>);
+            }
+
+            if (university.operating === false) {
+                createChip(<b>not operating</b>);
+            }
         }
         return res;
     }
