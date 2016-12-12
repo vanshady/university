@@ -32,18 +32,37 @@ class SearchCard extends React.Component {
     onSearched(university) {
         const self = this;
         function requestUniversity(done) {
-            request
-                .get(self.props.url + `/university/${university.unit_id}`)
-                .end((err, res) => {
-                    if (res) {
-                        done(err, res);
-                    }
-                });
+            if (typeof university === 'string') {
+                request
+                    .get(self.props.url + '/search_name/' + university)
+                    .end((err, res) => {
+                        if (!err && res && JSON.parse(res.text) && Array.isArray(JSON.parse(res.text)) && JSON.parse(res.text).length === 0) {
+                            const uni = JSON.parse(res.text)[0];
+                            if (uni.name == university) {
+                                request
+                                    .get(self.props.url + `/university/${JSON.parse(res.text)[0].unit_id}`)
+                                    .end((er, re) => {
+                                        if (res) {
+                                            done(er, re);
+                                        }
+                                    });
+                            }
+                        }
+                    });
+            } else {
+                request
+                    .get(self.props.url + `/university/${university.unit_id}`)
+                    .end((err, res) => {
+                        if (res) {
+                            done(err, res);
+                        }
+                    });
+            }
         }
         function handleResponse(err, res) {
-            if (JSON.parse(res.text)) {
+            if (res.status !== res.notFound || JSON.parse(res.text)) {
                 self.setState({
-                    university: JSON.parse(res.text),
+                    university: JSON.parse(res.text)[0],
                 });
             } else {
                 self.setState({
@@ -63,7 +82,7 @@ class SearchCard extends React.Component {
         request
             .get(self.props.url + '/search_name/' + text)
             .end((err, res) => {
-                if (res) {
+                if (res && !err) {
                     self.setState({
                         universities: JSON.parse(res.text),
                     });
