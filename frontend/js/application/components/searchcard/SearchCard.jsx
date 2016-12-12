@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
+import Chip from 'material-ui/Chip';
+import { teal300 } from 'material-ui/styles/colors';
 import SearchBar from './SearchBar';
 
 const request = require('superagent');
@@ -93,6 +95,7 @@ class SearchCard extends React.Component {
     renderUniversity() {
         const res = [];
         const university = this.state.university;
+        
         if (university) {
             if (university === errorMessage) {
                 return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
@@ -101,12 +104,12 @@ class SearchCard extends React.Component {
             Object.keys(university).forEach((prop) => {
                 if (typeof university[prop] === 'boolean') {
                     if (university[prop]) {
-                        res.push(<p key={key}><b>{ prop }: </b> true</p>);
+                        res.push(<Chip style={{ margin: 4 }} backgroundColor={teal300} key={key}><b>{ prop }: </b> true</Chip>);
                     } else {
-                        res.push(<p key={key}><b>{ prop }: </b> false</p>);
+                        res.push(<Chip style={{ margin: 4 }} backgroundColor={teal300} key={key}><b>{ prop }: </b> false</Chip>);
                     }
                 } else if (university[prop] && university[prop] !== 'NULL') {
-                    res.push(<p key={key}><b>{ prop }: </b>{university[prop]}</p>);
+                    res.push(<Chip style={{ margin: 4 }} backgroundColor={teal300} key={key}><b>{ prop }: </b>{university[prop]}</Chip>);
                 }
                 key += 1;
             });
@@ -131,7 +134,7 @@ class SearchCard extends React.Component {
             />
 
             <CardText expandable>
-              { this.renderUniversity() }
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>{ this.renderUniversity() }</div>
             </CardText>
           </Card>);
     }
