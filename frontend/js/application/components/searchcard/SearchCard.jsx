@@ -36,7 +36,7 @@ class SearchCard extends React.Component {
                 request
                     .get(self.props.url + '/search_name/' + university)
                     .end((err, res) => {
-                        if (!err && res && JSON.parse(res.text) && Array.isArray(JSON.parse(res.text)) && JSON.parse(res.text).length === 0) {
+                        if (!err && res && JSON.parse(res.text) && Array.isArray(JSON.parse(res.text)) && JSON.parse(res.text).length === 1) {
                             const uni = JSON.parse(res.text)[0];
                             if (uni.name == university) {
                                 request
