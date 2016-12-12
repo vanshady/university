@@ -99,7 +99,13 @@ class SearchCard extends React.Component {
             }
             let key = 0;
             Object.keys(university).forEach((prop) => {
-                if (university[prop] && university[prop] !== 'NULL') {
+                if (typeof university[prop] === 'boolean') {
+                    if (university[prop]) {
+                        res.push(<p key={key}><b>{ prop }: </b> true</p>);
+                    } else {
+                        res.push(<p key={key}><b>{ prop }: </b> false</p>);
+                    }
+                } else if (university[prop] && university[prop] !== 'NULL') {
                     res.push(<p key={key}><b>{ prop }: </b>{university[prop]}</p>);
                 }
                 key += 1;
