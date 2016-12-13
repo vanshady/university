@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
 import { amber400 } from 'material-ui/styles/colors';
+import LinearProgress from 'material-ui/LinearProgress';
 import SearchBar from './SearchBar';
 
 const request = require('superagent');
@@ -15,6 +16,7 @@ class SearchCard extends React.Component {
             university: '',
             universities: [],
             expanded: true,
+            searching: false,
         };
 
         this.onSearched = this.onSearched.bind(this);
@@ -38,6 +40,7 @@ class SearchCard extends React.Component {
                 request
                     .get(self.props.url + '/search_name/' + university)
                     .end((err, res) => {
+                        self.setState({ searching: false });
                         if (err && err.status === 404) return;
                         if (!err && res && JSON.parse(res.text)
                             && Array.isArray(JSON.parse(res.text))
@@ -58,12 +61,14 @@ class SearchCard extends React.Component {
                 request
                     .get(self.props.url + `/university/${university.unit_id}`)
                     .end((err, res) => {
+                        self.setState({ searching: false });
                         if (res) {
                             done(err, res);
                         }
                     });
             }
         }
+
         function handleResponse(err, res) {
             if (res.status !== res.notFound || JSON.parse(res.text)) {
                 self.setState({
@@ -75,10 +80,13 @@ class SearchCard extends React.Component {
                 });
             }
         }
+
         this.setState({
             university: '',
             expanded: true,
+            searching: true,
         });
+
         this.req = requestUniversity(handleResponse);
     }
 
@@ -102,6 +110,9 @@ class SearchCard extends React.Component {
     renderUniversity() {
         const res = [];
         const university = this.state.university;
+        if (this.state.searching) {
+            return <LinearProgress mode="indeterminate" />;
+        }
 
         if (university) {
             if (university === errorMessage) {
@@ -166,6 +177,7 @@ class SearchCard extends React.Component {
                 createChip(<b>not operating</b>);
             }
         }
+
         return res;
     }
 
