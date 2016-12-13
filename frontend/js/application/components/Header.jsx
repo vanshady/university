@@ -32,6 +32,7 @@ class Header extends React.Component {
         return (
           <AppBar
             title="University Dashboard"
+            showMenuIconButton={false}
             zDepth={this.state.zDepth}
           />);
     }
