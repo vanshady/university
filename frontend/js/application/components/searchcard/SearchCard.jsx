@@ -180,7 +180,7 @@ class SearchCard extends React.Component {
 
             <SearchBar
               onSearched={this.onSearched}
-              universities={this.state.universities.map(el => el.name + ', ' + el.city_name)}
+              universities={this.state.universities.map((el) => { return { name: el.name + ', ' + el.city_name, unit_id: el.unit_id }; })}
               onUpdateInput={this.onUpdateInput}
               hintText="Which university are you interested in?"
             />
