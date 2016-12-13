@@ -27,7 +27,6 @@ class SearchBar extends React.Component {
             <AutoComplete
               hintText={this.props.hintText ? this.props.hintText : 'Search'}
               dataSource={this.props.universities}
-              dataSourceConfig={{ text: 'name', value: 'name' }}
               fullWidth
               filter={() => true}
               maxSearchResults={10}

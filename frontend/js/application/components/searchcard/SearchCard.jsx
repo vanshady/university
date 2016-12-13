@@ -38,9 +38,12 @@ class SearchCard extends React.Component {
                 request
                     .get(self.props.url + '/search_name/' + university)
                     .end((err, res) => {
-                        if (!err && res && JSON.parse(res.text) && Array.isArray(JSON.parse(res.text)) && JSON.parse(res.text).length === 1) {
+                        if (err && err.status === 404) return;
+                        if (!err && res && JSON.parse(res.text)
+                            && Array.isArray(JSON.parse(res.text))
+                            && JSON.parse(res.text).length === 1) {
                             const uni = JSON.parse(res.text)[0];
-                            if (uni.name == university) {
+                            if (uni.name === university) {
                                 request
                                     .get(self.props.url + `/university/${JSON.parse(res.text)[0].unit_id}`)
                                     .end((er, re) => {
@@ -84,6 +87,10 @@ class SearchCard extends React.Component {
         request
             .get(self.props.url + '/search_name/' + text)
             .end((err, res) => {
+                if (err && err.status === 404) {
+                    return;
+                }
+
                 if (res && !err) {
                     self.setState({
                         universities: JSON.parse(res.text),
@@ -95,7 +102,7 @@ class SearchCard extends React.Component {
     renderUniversity() {
         const res = [];
         const university = this.state.university;
-        
+
         if (university) {
             if (university === errorMessage) {
                 return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
@@ -104,8 +111,8 @@ class SearchCard extends React.Component {
             let key = 0;
 
             const createChip = (children) => {
+                res.push(<Chip style={{ margin: 4 }} backgroundColor={amber400} key={key}>{ children }</Chip>);
                 key += 1;
-                res.push(<Chip style={{ margin: 4 }} backgroundColor={amber400} key={key - 1}>{ children }</Chip>);
             };
 
             if (university.alias && university.alias.length > 0) {
@@ -173,7 +180,7 @@ class SearchCard extends React.Component {
 
             <SearchBar
               onSearched={this.onSearched}
-              universities={this.state.universities}
+              universities={this.state.universities.map(el => el.name + ', ' + el.city_name)}
               onUpdateInput={this.onUpdateInput}
               hintText="Which university are you interested in?"
             />
