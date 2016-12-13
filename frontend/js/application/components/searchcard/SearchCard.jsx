@@ -17,6 +17,7 @@ class SearchCard extends React.Component {
             universities: [],
             expanded: true,
             searching: false,
+            search_failed: false,
         };
 
         this.onSearched = this.onSearched.bind(this);
@@ -37,16 +38,22 @@ class SearchCard extends React.Component {
         const self = this;
         function requestUniversity(done) {
             if (typeof university === 'string') {
+                let name = university;
+
+                if (university.substring(0, university.lastIndexOf(',')) === self.state.universities[0].name) {
+                    name = self.state.universities[0].name;
+                }
+
                 request
-                    .get(self.props.url + '/search_name/' + university)
+                    .get(self.props.url + '/search_name/' + name)
                     .end((err, res) => {
                         self.setState({ searching: false });
-                        if (err && err.status === 404) return;
+                        if (err && err.status === 404) { self.setState({ search_failed: true }); return; }
                         if (!err && res && JSON.parse(res.text)
                             && Array.isArray(JSON.parse(res.text))
                             && JSON.parse(res.text).length === 1) {
                             const uni = JSON.parse(res.text)[0];
-                            if (uni.name === university) {
+                            if (uni.name === name) {
                                 request
                                     .get(self.props.url + `/university/${JSON.parse(res.text)[0].unit_id}`)
                                     .end((er, re) => {
@@ -54,7 +61,11 @@ class SearchCard extends React.Component {
                                             done(er, re);
                                         }
                                     });
+                            } else {
+                                self.setState({ search_failed: true });
                             }
+                        } else {
+                            self.setState({ search_failed: true });
                         }
                     });
             } else {
@@ -64,6 +75,8 @@ class SearchCard extends React.Component {
                         self.setState({ searching: false });
                         if (res) {
                             done(err, res);
+                        } else {
+                            self.setState({ search_failed: true });
                         }
                     });
             }
@@ -75,9 +88,7 @@ class SearchCard extends React.Component {
                     university: JSON.parse(res.text)[0],
                 });
             } else {
-                self.setState({
-                    university: errorMessage,
-                });
+                self.setState({ search_failed: true });
             }
         }
 
@@ -85,6 +96,7 @@ class SearchCard extends React.Component {
             university: '',
             expanded: true,
             searching: true,
+            search_failed: false,
         });
 
         this.req = requestUniversity(handleResponse);
@@ -114,11 +126,11 @@ class SearchCard extends React.Component {
             return <LinearProgress mode="indeterminate" />;
         }
 
-        if (university) {
-            if (university === errorMessage) {
-                return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
-            }
+        if (this.state.search_failed) {
+            return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
+        }
 
+        if (university) {
             let key = 0;
 
             const createChip = (children) => {
