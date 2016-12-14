@@ -43,7 +43,8 @@ class SearchBar extends React.Component {
 SearchBar.propTypes = {
     onSearched: React.PropTypes.func,
     onUpdateInput: React.PropTypes.func,
-    universities: React.PropTypes.array,
+    universities:
+        React.PropTypes.arrayOf(React.PropTypes.oneOfType([React.PropTypes.object, null])),
     hintText: React.PropTypes.string,
 };
 

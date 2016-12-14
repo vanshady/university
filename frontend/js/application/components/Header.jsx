@@ -21,9 +21,9 @@ class Header extends React.Component {
         window.removeEventListener('resize', this.onResize, false);
     }
 
-    onResize(e) {
+    onResize() {
         this.setState({
-            zDepth: UI.windowWidth() <= UI.BREAK_POINT ? 0 : 1
+            zDepth: UI.windowWidth() <= UI.BREAK_POINT ? 0 : 1,
         });
     }
 

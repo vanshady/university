@@ -48,7 +48,10 @@ class SearchCard extends React.Component {
                     .get(self.props.url + '/search_name/' + name)
                     .end((err, res) => {
                         self.setState({ searching: false });
-                        if (err && err.status === 404) { self.setState({ search_failed: true }); return; }
+                        if (err && err.status === 404) {
+                            self.setState({ search_failed: true });
+                            return;
+                        }
                         if (!err && res && JSON.parse(res.text)
                             && Array.isArray(JSON.parse(res.text))
                             && JSON.parse(res.text).length === 1) {
@@ -134,7 +137,9 @@ class SearchCard extends React.Component {
             let key = 0;
 
             const createChip = (children) => {
-                res.push(<Chip style={{ margin: 4 }} backgroundColor={amber400} key={key}>{ children }</Chip>);
+                res.push(<Chip style={{ margin: 4 }} backgroundColor={amber400} key={key}>
+                  { children }
+                </Chip>);
                 key += 1;
             };
 
@@ -204,7 +209,7 @@ class SearchCard extends React.Component {
 
             <SearchBar
               onSearched={this.onSearched}
-              universities={this.state.universities.map((el) => { return { name: el.name + ', ' + el.city_name, unit_id: el.unit_id }; })}
+              universities={this.state.universities.map(el => ({ name: el.name + ', ' + el.city_name, unit_id: el.unit_id }))}
               onUpdateInput={this.onUpdateInput}
               hintText="Which university are you interested in?"
             />
