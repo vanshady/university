@@ -5,6 +5,7 @@ import Header from './components/Header';
 // import Footer from './components/Footer';
 import Panel from './components/Panel';
 import SearchCard from './components/searchcard/SearchCard';
+import SATCard from './components/satcard/SATCard';
 
 class Application extends React.Component {
     getChildContext() {
@@ -17,7 +18,7 @@ class Application extends React.Component {
             <Header />
             <Panel>
               <SearchCard url="https://university-backend.herokuapp.com" />
-              <div />
+              <SATCard />
             </Panel>
             {/* <Footer/> */}
           </div>);
