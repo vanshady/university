@@ -54,11 +54,11 @@ class SATCard extends React.Component {
             const xAxis = d3.axisBottom()
                         .scale(xScale);
 
-            function randomJitter() {
-                const seed = Math.round(Math.random() * 1) === 0 ? -5 : 5;
+            const randomJitter = () => {
+                const seed = Math.round(Math.random() * 1) === 0 ? -10 : 10;
 
                 return midline + Math.floor((Math.random() * seed) + 1);
-            }
+            };
 
             const csv = mockdata.map(d => ({ date: d.date, value: parseFloat(d.value) }));
             let data = csv.map(d => d.value);
@@ -66,7 +66,6 @@ class SATCard extends React.Component {
             data = data.sort(d3.ascending);
 
             // calculate the boxplot statistics
-            // const minVal = data[0];
             const q1Val = d3.quantile(data, 0.25);
             const medianVal = d3.quantile(data, 0.5);
             const q3Val = d3.quantile(data, 0.75);
@@ -75,9 +74,6 @@ class SATCard extends React.Component {
             const outliers = [];
             let lowerWhisker = Infinity;
             let upperWhisker = -Infinity;
-
-            // lowerWhisker = d3.max([minVal, q1Val - iqr])
-            // upperWhisker = d3.min([maxVal, q3Val + iqr]);
 
             let index = 0;
 
