@@ -9,6 +9,19 @@ END//
 delimiter ;
 
 delimiter //
+DROP PROCEDURE IF EXISTS AllSAT //
+CREATE PROCEDURE AllSAT()
+BEGIN 
+IF EXISTS (SELECT name, sat_avg FROM University, Admission) THEN
+SELECT name, Admission.sat_avg 
+FROM University, Admission
+WHERE University.unit_id = Admission.unit_id AND Admission.sat_avg IS NOT NULL
+ORDER BY sat_avg ASC;
+END IF;
+END//
+delimiter ;
+
+delimiter //
 DROP PROCEDURE IF EXISTS SearchName //
 CREATE PROCEDURE SearchName(IN curname VARCHAR(93))
 BEGIN 
