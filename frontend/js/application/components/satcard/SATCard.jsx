@@ -3,7 +3,6 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 import * as d3 from 'd3';
 import * as ReactFauxDOM from 'react-faux-dom';
 import Dimensions from 'react-dimensions';
-import mockdata from './mockdata';
 
 const request = require('superagent');
 
@@ -65,7 +64,7 @@ class SATCard extends React.Component {
                 return midline + Math.floor((Math.random() * seed) + 1);
             };
 
-            const csv = this.state.data; // mockdata.map(d => ({ date: d.date, value: parseFloat(d.value) }));
+            const csv = this.state.data;
             let data = csv.map(d => d.value);
 
             data = data.sort(d3.ascending);
@@ -75,7 +74,7 @@ class SATCard extends React.Component {
             const medianVal = d3.quantile(data, 0.5);
             const q3Val = d3.quantile(data, 0.75);
             const iqr = q3Val - q1Val;
-            const maxVal = data[data.length - 1];
+            // const maxVal = data[data.length - 1];
             const outliers = [];
             let lowerWhisker = Infinity;
             let upperWhisker = -Infinity;
