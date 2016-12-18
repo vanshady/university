@@ -191,7 +191,9 @@ class SATCard extends React.Component {
 
             <CardText expandable> { this.renderSVG() } </CardText>
             <CardText expandable>
-              <p> This is a boxplot showing the distribution of sat average score of each university. </p> 
+              <p> This is a boxplot showing the distribution
+                of sat average score of each university.
+            </p>
             </CardText>
           </Card>);
     }
@@ -202,7 +204,7 @@ SATCard.childContextTypes = {
 };
 
 SATCard.PropTypes = {
-    containerWidth: React.PropTypes.number,
+    containerWidth: React.PropTypes.number.isRequired,
 };
 
-export default Dimensions()(SATCard);
+export default Dimensions({ elementResize: true })(SATCard);
