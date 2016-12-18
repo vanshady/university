@@ -5,28 +5,33 @@ import * as ReactFauxDOM from 'react-faux-dom';
 import Dimensions from 'react-dimensions';
 import mockdata from './mockdata';
 
-// const request = require('superagent');
+const request = require('superagent');
 
 class SATCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             expanded: false,
-            sat: [],
+            data: [],
         };
 
         this.renderSVG = this.renderSVG.bind(this);
+        const self = this;
+        request
+            .get(self.props.url + '/all_sat')
+            .end((err, res) => {
+                if (res) {
+                    const data = JSON.parse(res.text).map(
+                            d => ({ name: d.name, value: parseInt(d.sat_avg, 10) }),
+                        );
 
-        // const self = this;
-        // request
-        //     .get(self.props.url + '/all_sat/')
-        //     .end((err, res) => {
-        //         if (res) {
-        //             self.setState({
-        //                 universities: JSON.parse(res.text),
-        //             });
-        //         }
-        //     });
+                    self.setState({
+                        data,
+                        median: d3.quantile(data.map(d => d.value), 0.5),
+                    });
+                    console.log(JSON.parse(res.text).map(d => d.sat));
+                }
+            });
     }
 
     renderSVG() {
@@ -55,12 +60,12 @@ class SATCard extends React.Component {
                         .scale(xScale);
 
             const randomJitter = () => {
-                const seed = Math.round(Math.random() * 1) === 0 ? -10 : 10;
+                const seed = Math.round(Math.random() * 1) === 0 ? -15 : 15;
 
                 return midline + Math.floor((Math.random() * seed) + 1);
             };
 
-            const csv = mockdata.map(d => ({ date: d.date, value: parseFloat(d.value) }));
+            const csv = this.state.data; // mockdata.map(d => ({ date: d.date, value: parseFloat(d.value) }));
             let data = csv.map(d => d.value);
 
             data = data.sort(d3.ascending);
@@ -102,7 +107,7 @@ class SATCard extends React.Component {
             }
 
             // map the domain to the x scale +10%
-            xScale.domain([0, maxVal * 1.10]);
+            xScale.domain([0, 1600]);
 
             // append the axis
             svg.append('g')
@@ -161,7 +166,7 @@ class SATCard extends React.Component {
                 .data(csv)
                 .enter()
                 .append('circle')
-                .attr('r', 3.5)
+                .attr('r', 3)
                 .attr('class', (d) => {
                     if (d.value < lowerWhisker || d.value > upperWhisker) {
                         return 'outlier';
@@ -191,8 +196,8 @@ class SATCard extends React.Component {
 
             <CardText expandable>
               { this.renderSVG() }
-              <p> This is a boxplot showing the distribution
-                of sat average score of each university.
+              <p> { `This is a boxplot showing the distribution
+                of SAT average score of each university. The median average SAT score is ${this.state.median}.` }
               </p>
             </CardText>
           </Card>);
@@ -205,6 +210,7 @@ SATCard.childContextTypes = {
 
 SATCard.PropTypes = {
     containerWidth: React.PropTypes.number.isRequired,
+    url: React.PropTypes.string.isRequired,
 };
 
 export default Dimensions({ elementResize: true })(SATCard);
