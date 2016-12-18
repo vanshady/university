@@ -17,10 +17,10 @@ class SearchBar extends React.Component {
 
     render() {
         const inputStyle = {
-            padding: '16px 16px 11px 60px',
+            padding: '16px 16px 11px 20px',
             boxSizing: 'border-box',
         };
-        const underlineStyle = { marginLeft: '-60px', bottom: '0px' };
+        const underlineStyle = { marginLeft: '0px', bottom: '0px' };
 
         return (
           <div>

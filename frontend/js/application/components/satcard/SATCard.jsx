@@ -35,7 +35,7 @@ class SATCard extends React.Component {
         if (this.state.expanded) {
             // initialize the dimensions
             const padding = 20;
-            const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+            const margin = { top: 20, right: 20, bottom: 0, left: 20 };
             const svg = d3.select(div).append('svg')
                 .attr('width', this.props.containerWidth - margin.left - margin.right)
                 .attr('height', 200);
