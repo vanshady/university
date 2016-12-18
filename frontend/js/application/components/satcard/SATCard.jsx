@@ -38,9 +38,9 @@ class SATCard extends React.Component {
             const margin = { top: 20, right: 20, bottom: 0, left: 20 };
             const svg = d3.select(div).append('svg')
                 .attr('width', this.props.containerWidth - margin.left - margin.right)
-                .attr('height', 200);
+                .attr('height', 160);
             const width = +svg.attr('width') - margin.left - margin.right;
-            const height = +svg.attr('height') - margin.top - margin.bottom - 10;
+            const height = +svg.attr('height') - margin.top - margin.bottom;
 
             const midline = (height - padding) / 2;
 
@@ -161,7 +161,7 @@ class SATCard extends React.Component {
                 .data(csv)
                 .enter()
                 .append('circle')
-                .attr('r', 4)
+                .attr('r', 3.5)
                 .attr('class', (d) => {
                     if (d.value < lowerWhisker || d.value > upperWhisker) {
                         return 'outlier';
@@ -187,13 +187,13 @@ class SATCard extends React.Component {
             onExpandChange={(expanded) => { this.setState({ expanded }); }}
             style={{ marginTop: '10px', marginBottom: '10px' }}
           >
-            <CardHeader showExpandableButton title="SAT Median Distribution" />
+            <CardHeader showExpandableButton title="SAT Average Distribution" />
 
-            <CardText expandable> { this.renderSVG() } </CardText>
             <CardText expandable>
+              { this.renderSVG() }
               <p> This is a boxplot showing the distribution
                 of sat average score of each university.
-            </p>
+              </p>
             </CardText>
           </Card>);
     }
