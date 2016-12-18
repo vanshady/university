@@ -38,11 +38,13 @@ class SATCard extends React.Component {
             const margin = { top: 20, right: 20, bottom: 30, left: 50 };
             const svg = d3.select(div).append('svg')
                 .attr('width', this.props.containerWidth - margin.left - margin.right)
-                .attr('height', 500);
+                .attr('height', 300);
             const width = +svg.attr('width') - margin.left - margin.right;
             const height = +svg.attr('height') - margin.top - margin.bottom - 10;
 
             const midline = (height - padding) / 2;
+
+            const boxHeight = 60;
 
             // initialize the x scale
             const xScale = d3.scaleLinear()
@@ -118,8 +120,8 @@ class SATCard extends React.Component {
                 .attr('x1', xScale(lowerWhisker))
                 .attr('x2', xScale(lowerWhisker))
                 .attr('stroke', 'black')
-                .attr('y1', midline - 10)
-                .attr('y2', midline + 10);
+                .attr('y1', midline - boxHeight / 2)
+                .attr('y2', midline + boxHeight / 2);
 
             // draw vertical line for upperWhisker
             svg.append('line')
@@ -127,8 +129,8 @@ class SATCard extends React.Component {
                 .attr('x1', xScale(upperWhisker))
                 .attr('x2', xScale(upperWhisker))
                 .attr('stroke', 'black')
-                .attr('y1', midline - 10)
-                .attr('y2', midline + 10);
+                .attr('y1', midline - boxHeight / 2)
+                .attr('y2', midline + boxHeight / 2);
 
             // draw horizontal line from lowerWhisker to upperWhisker
             svg.append('line')
@@ -145,9 +147,9 @@ class SATCard extends React.Component {
                 .attr('stroke', 'black')
                 .attr('fill', 'white')
                 .attr('x', xScale(q1Val))
-                .attr('y', padding + midline - 30)
+                .attr('y', midline - boxHeight / 2)
                 .attr('width', xScale(iqr) - padding)
-                .attr('height', 20);
+                .attr('height', boxHeight);
 
             // draw vertical line at median
             svg.append('line')
@@ -155,15 +157,15 @@ class SATCard extends React.Component {
                 .attr('stroke', 'black')
                 .attr('x1', xScale(medianVal))
                 .attr('x2', xScale(medianVal))
-                .attr('y1', midline - 10)
-                .attr('y2', midline + 10);
+                .attr('y1', midline - boxHeight / 2)
+                .attr('y2', midline + boxHeight / 2);
 
             // draw data as points
             svg.selectAll('circle')
                 .data(csv)
                 .enter()
                 .append('circle')
-                .attr('r', 2.5)
+                .attr('r', 4)
                 .attr('class', (d) => {
                     if (d.value < lowerWhisker || d.value > upperWhisker) {
                         return 'outlier';
