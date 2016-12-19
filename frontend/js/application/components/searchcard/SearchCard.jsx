@@ -205,7 +205,7 @@ class SearchCard extends React.Component {
             onExpandChange={(expanded) => { this.setState({ expanded }); }}
             style={{ marginTop: '10px', marginBottom: '10px' }}
           >
-            <CardHeader showExpandableButton title="Search a university" />
+            <CardHeader showExpandableButton title="Search a university" actAsExpander />
 
             <SearchBar
               onSearched={this.onSearched}

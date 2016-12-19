@@ -184,7 +184,7 @@ class SATCard extends React.Component {
             onExpandChange={(expanded) => { this.setState({ expanded }); }}
             style={{ marginTop: '10px', marginBottom: '10px' }}
           >
-            <CardHeader showExpandableButton title="SAT Average Distribution" />
+            <CardHeader showExpandableButton title="SAT Average Distribution" actAsExpander />
 
             <CardText expandable>
               { this.renderSVG() }
