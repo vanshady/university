@@ -78,7 +78,7 @@ DROP PROCEDURE IF EXISTS TuitionDifference //
 CREATE PROCEDURE TuitionDifference(IN id INT)
 BEGIN
 IF EXISTS (SELECT * FROM University WHERE University.unit_id = id) THEN
-SELECT out_state-in_state AS difference
+SELECT out_state-in_state AS tuition_difference
 FROM Tuition
 WHERE Tuition.unit_id = id;
 ELSE
@@ -98,11 +98,11 @@ END//
 delimiter ;
 
 delimiter //
-DROP PROCEDURE IF EXISTS TuitionExpendDifference //
-CREATE PROCEDURE TuitionExpendDifference(IN id INT)
+DROP PROCEDURE IF EXISTS TuitionExpenseDifference //
+CREATE PROCEDURE TuitionExpenseDifference(IN id INT)
 BEGIN
 IF EXISTS (SELECT * FROM University WHERE University.unit_id = id) THEN
-SELECT instructional_expenditures-out_state AS difference
+SELECT instructional_expenditures-out_state AS tuition_expense_difference
 FROM Tuition
 WHERE Tuition.unit_id = id;
 ELSE

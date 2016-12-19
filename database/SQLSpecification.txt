@@ -14,7 +14,7 @@
 	PublicTuitionDifference
 
 6. List the difference of the instructional_expenditures and tuition of a specified school(expenditure minus in_state)
-	TuitionExpendDifference
+	TuitionExpenseDifference
 
 7. List the average difference of the instructional_expenditures and tuition of private non-profit schools
 
