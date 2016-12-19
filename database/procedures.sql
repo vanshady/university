@@ -72,3 +72,41 @@ SELECT 'ERROR: University does not exist' AS 'Result';
 END IF;
 END//
 delimiter ;
+
+delimiter //
+DROP PROCEDURE IF EXISTS TuitionDifference //
+CREATE PROCEDURE TuitionDifference(IN id INT)
+BEGIN
+IF EXISTS (SELECT * FROM University WHERE University.unit_id = id) THEN
+SELECT out_state-in_state AS difference
+FROM Tuition
+WHERE Tuition.unit_id = id;
+ELSE
+SELECT 'ERROR: University does not exist' AS 'Result';
+END IF;
+END//
+delimiter ;
+
+delimiter //
+DROP PROCEDURE IF EXISTS PublicTuitionDifference //
+CREATE PROCEDURE PublicTuitionDifference()
+BEGIN
+SELECT AVG(out_state-in_state) AS difference
+FROM Tuition,University,Control
+WHERE Tuition.unit_id = University.unit_id AND University.control_id = Control.control_id AND Control.detail = "public";
+END//
+delimiter ;
+
+delimiter //
+DROP PROCEDURE IF EXISTS TuitionExpendDifference //
+CREATE PROCEDURE TuitionExpendDifference(IN id INT)
+BEGIN
+IF EXISTS (SELECT * FROM University WHERE University.unit_id = id) THEN
+SELECT instructional_expenditures-out_state AS difference
+FROM Tuition
+WHERE Tuition.unit_id = id;
+ELSE
+SELECT 'ERROR: University does not exist' AS 'Result';
+END IF;
+END//
+delimiter ;

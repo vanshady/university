@@ -7,12 +7,14 @@
 3. List the address information of the university(city_name,state_name, latitude, longitude, zip)
 	UniversityAddress
 
-4. List the difference of the in-state and out-state tuition of a specified school(out-state minus in-state)
+4. List the difference of the in-state and out-state tuition of a specified school(out_state minus in_state)
 	TuitionDifference
 
-5. List the average difference of the in-state and out-state tuition of public schools
+5. List the average difference of the in-state and out-state tuition of public schools(out_state minus in_state)
+	PublicTuitionDifference
 
-6. List the difference of the instructional_expenditures and tuition of a specified school
+6. List the difference of the instructional_expenditures and tuition of a specified school(expenditure minus in_state)
+	TuitionExpendDifference
 
 7. List the average difference of the instructional_expenditures and tuition of private non-profit schools
 
