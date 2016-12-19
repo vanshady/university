@@ -4,11 +4,31 @@ import lightTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import Header from './components/Header';
 // import Footer from './components/Footer';
 import Panel from './components/Panel';
-import PublicTuitionCard from './components/PublicTuitionCard';
+import MyCard from './components/MyCard';
 import SearchCard from './components/searchcard/SearchCard';
 import SATCard from './components/satcard/SATCard';
 
+const request = require('superagent');
+
 class Application extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: false,
+            difference: 0,
+        };
+        const url = 'https://university-backend.herokuapp.com';
+        const self = this;
+        request
+            .get(url + '/public_tuition_difference')
+            .end((err, res) => {
+                if (res) {
+                    const difference = parseFloat(JSON.parse(res.text)[0].difference);
+                    self.setState({ difference: Math.round(difference * 100) / 100 });
+                }
+            });
+    }
+
     getChildContext() {
         return { muiTheme: getMuiTheme(lightTheme) };
     }
@@ -20,7 +40,10 @@ class Application extends React.Component {
             <Panel>
               <SearchCard url="https://university-backend.herokuapp.com" />
               <SATCard url="https://university-backend.herokuapp.com" />
-              <PublicTuitionCard url="https://university-backend.herokuapp.com" />
+              <MyCard
+                text={`The average difference between out-state and in-state tuition of public universities is $${this.state.difference}.`}
+                title="Public University Tuition Difference"
+              />
             </Panel>
             {/* <Footer /> */}
           </div>);
