@@ -36,7 +36,38 @@ class SearchCard extends React.Component {
 
     onSearched(university) {
         const self = this;
-        function requestUniversity(done) {
+
+        function handleResponse(err, res) {
+            if (res.status !== res.notFound || JSON.parse(res.text)) {
+                self.setState({
+                    university: Object.assign(self.state.university, JSON.parse(res.text)[0]),
+                });
+            } else {
+                self.setState({ search_failed: true });
+            }
+        }
+
+        function makeRequest(api, id) {
+            request
+                .get(self.props.url + `/${api}/${id}`)
+                .end((err, res) => {
+                    self.setState({ searching: false });
+                    if (res) {
+                        handleResponse(err, res);
+                    } else {
+                        self.setState({ search_failed: true });
+                    }
+                });
+        }
+
+        function requestUniversity(id) {
+            makeRequest('university', id);
+            makeRequest('university_address', id);
+            makeRequest('tuition_difference', id);
+            makeRequest('tuition_expense_difference', id);
+        }
+
+        function checkId() {
             if (typeof university === 'string') {
                 let name = university;
 
@@ -57,13 +88,7 @@ class SearchCard extends React.Component {
                             && JSON.parse(res.text).length === 1) {
                             const uni = JSON.parse(res.text)[0];
                             if (uni.name === name) {
-                                request
-                                    .get(self.props.url + `/university/${JSON.parse(res.text)[0].unit_id}`)
-                                    .end((er, re) => {
-                                        if (res) {
-                                            done(er, re);
-                                        }
-                                    });
+                                requestUniversity(JSON.parse(res.text)[0].unit_id);
                             } else {
                                 self.setState({ search_failed: true });
                             }
@@ -72,37 +97,18 @@ class SearchCard extends React.Component {
                         }
                     });
             } else {
-                request
-                    .get(self.props.url + `/university/${university.unit_id}`)
-                    .end((err, res) => {
-                        self.setState({ searching: false });
-                        if (res) {
-                            done(err, res);
-                        } else {
-                            self.setState({ search_failed: true });
-                        }
-                    });
-            }
-        }
-
-        function handleResponse(err, res) {
-            if (res.status !== res.notFound || JSON.parse(res.text)) {
-                self.setState({
-                    university: JSON.parse(res.text)[0],
-                });
-            } else {
-                self.setState({ search_failed: true });
+                requestUniversity(university.unit_id);
             }
         }
 
         this.setState({
-            university: '',
+            university: {},
             expanded: true,
             searching: true,
             search_failed: false,
         });
 
-        this.req = requestUniversity(handleResponse);
+        checkId();
     }
 
     onUpdateInput(text) {
@@ -124,7 +130,7 @@ class SearchCard extends React.Component {
 
     renderUniversity() {
         const res = [];
-        const university = this.state.university;
+       
         if (this.state.searching) {
             return <LinearProgress mode="indeterminate" />;
         }
@@ -133,7 +139,9 @@ class SearchCard extends React.Component {
             return <h3 style={{ color: 'red' }}>{errorMessage}</h3>;
         }
 
-        if (university) {
+        if (this.state.university) {
+            const university = this.state.university;
+
             let key = 0;
 
             const createChip = (children) => {
@@ -144,54 +152,68 @@ class SearchCard extends React.Component {
             };
 
             if (university.alias && university.alias.length > 0) {
-                createChip(<div><b>alias:</b> {university.alias}</div>);
+                createChip(<div><b>Alias:</b> {university.alias}</div>);
+            }
+
+            if (university.state_name && university.state_name.length > 0) {
+                createChip(<div><b>State:</b> {university.state_name}</div>);
             }
 
             if (university.city_name && university.city_name.length > 0) {
-                createChip(<div><b>location:</b> {university.city_name}</div>);
-            }
-
-            if (university.url && university.url.length > 0) {
-                createChip(<a href={'http://' + university.url}>website</a>);
+                createChip(<div><b>City:</b> {university.city_name}</div>);
             }
 
             if (university.zip && university.zip.length > 0) {
-                createChip(<div><b>zip:</b> {university.zip}</div>);
+                createChip(<div><b>Zip:</b> {university.zip}</div>);
             }
 
+            if (university.url && university.url.length > 0) {
+                createChip(<a href={'http://' + university.url}>{'http://' + university.url}</a>);
+            }
+
+            if (university.latitude) {
+                createChip(<div><b>Latitude:</b> {Math.round(university.latitude * 100) / 100}</div>);
+            }
+
+            if (university.longitude) {
+                createChip(<div><b>Longitude:</b> {Math.round(university.longitude * 100) / 100}</div>);
+            }
+            
             if (university.main_campus && typeof university.main_campus === 'boolean') {
-                if (university.main_campus) createChip(<b>main campus</b>);
-                else createChip(<b>not main campus</b>);
+                if (university.main_campus) createChip(<b>Main Campus</b>);
+                else createChip(<b>Not Main Campus</b>);
             }
 
-            if (university.num_branches && typeof university.num_branches === 'number') {
-                if (university.num_branches > 1) {
-                    createChip(<b>{university.num_branches} branches</b>);
-                } else if (university.num_branches === 1) {
-                    createChip(<b>{university.num_branches} branch</b>);
-                } else if (university.num_branches === 0) {
-                    createChip(<b>no branch</b>);
-                }
+            if (typeof university.num_branches === 'number' && university.num_branches > 1) {
+                createChip(<b>{university.num_branches} branches</b>);
             }
 
             if (university.historically_black === true) {
-                createChip(<b>historically black</b>);
+                createChip(<b>Historically Black</b>);
             }
 
             if (university.predominatly_black === true) {
-                createChip(<b>predominantly black</b>);
+                createChip(<b>Predominantly Black</b>);
             }
 
             if (university.men_only === true) {
-                createChip(<b>men only</b>);
+                createChip(<b>Men Only</b>);
             }
 
             if (university.women_only === true) {
-                createChip(<b>women only</b>);
+                createChip(<b>Women Only</b>);
             }
 
             if (university.operating === false) {
-                createChip(<b>not operating</b>);
+                createChip(<b>Not Operating</b>);
+            }
+
+            if (university.tuition_difference !== 0) {
+                createChip(<div><b>Outstate/Instate Tuition Difference:</b> {university.tuition_difference}</div>);
+            }
+
+            if (university.tuition_expense_difference !== 0) {
+                createChip(<div><b>Expense - Tuition:</b> {university.tuition_expense_difference}</div>);
             }
         }
 
