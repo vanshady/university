@@ -3,6 +3,7 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 import * as d3 from 'd3';
 import * as ReactFauxDOM from 'react-faux-dom';
 import Dimensions from 'react-dimensions';
+import MyCard from '../MyCard';
 
 const request = require('superagent');
 
@@ -177,16 +178,16 @@ class SATCard extends React.Component {
 
     render() {
         return (
-          <Card style={{ marginTop: '10px', marginBottom: '10px' }}>
-            <CardHeader showExpandableButton title="SAT Average Distribution" actAsExpander />
-
-            <CardText expandable>
-              { this.renderSVG() }
-              <p> { `This is a boxplot showing the distribution
-                of SAT average score of each university. The median average SAT score is ${this.state.median}.` }
-              </p>
-            </CardText>
-          </Card>);
+          <MyCard
+            loading={this.state.data.length === 0 || !this.state.median}
+            title="SAT Average Distribution"
+          >
+            { this.renderSVG() }
+            <p> { `This is a boxplot showing the distribution
+              of SAT average score of each university.
+              The median average SAT score is ${this.state.median}.` }
+            </p>
+          </MyCard>);
     }
 }
 
