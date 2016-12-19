@@ -10,7 +10,6 @@ class SATCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            expanded: false,
             data: [],
         };
 
@@ -178,11 +177,7 @@ class SATCard extends React.Component {
 
     render() {
         return (
-          <Card
-            expanded={this.state.expanded}
-            onExpandChange={(expanded) => { this.setState({ expanded }); }}
-            style={{ marginTop: '10px', marginBottom: '10px' }}
-          >
+          <Card style={{ marginTop: '10px', marginBottom: '10px' }}>
             <CardHeader showExpandableButton title="SAT Average Distribution" actAsExpander />
 
             <CardText expandable>
