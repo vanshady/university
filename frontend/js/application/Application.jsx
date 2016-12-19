@@ -15,7 +15,6 @@ class Application extends React.Component {
         super(props);
         this.state = {
             expanded: false,
-            difference: 0,
         };
         const url = 'https://university-backend.herokuapp.com';
         const self = this;
@@ -41,9 +40,11 @@ class Application extends React.Component {
               <SearchCard url="https://university-backend.herokuapp.com" />
               <SATCard url="https://university-backend.herokuapp.com" />
               <MyCard
-                text={`The average difference between out-state and in-state tuition of public universities is $${this.state.difference}.`}
+                loading={!this.state.difference}
                 title="Public University Tuition Difference"
-              />
+              >
+                <p>{ `The average difference between out-state and in-state tuition of public universities is $${this.state.difference}.` }</p>
+              </MyCard>
             </Panel>
             <Footer />
           </div>);

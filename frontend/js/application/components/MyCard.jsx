@@ -1,8 +1,25 @@
 import React from 'react';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
+import LinearProgress from 'material-ui/LinearProgress';
 
 class MyCard extends React.Component {
     render() {
+        if (this.props.loading) {
+            return (
+              <Card style={{ marginTop: '10px', marginBottom: '10px' }}>
+                <CardHeader
+                  showExpandableButton
+                  title={this.props.title}
+                  actAsExpander
+                />
+
+                <CardText expandable>
+                  <LinearProgress />
+                  <p style={{ textAlign: 'center' }}>Loading</p>
+                </CardText>
+              </Card>);
+        }
+
         return (
           <Card style={{ marginTop: '10px', marginBottom: '10px' }}>
             <CardHeader
@@ -12,7 +29,7 @@ class MyCard extends React.Component {
             />
 
             <CardText expandable>
-              <p> { this.props.text } </p>
+              { this.props.children }
             </CardText>
           </Card>);
     }
@@ -24,7 +41,8 @@ MyCard.childContextTypes = {
 
 MyCard.propTypes = {
     title: React.PropTypes.string.isRequired,
-    text: React.PropTypes.string,
+    children: React.PropTypes.node,
+    loading: React.PropTypes.bool,
 };
 
 export default MyCard;
