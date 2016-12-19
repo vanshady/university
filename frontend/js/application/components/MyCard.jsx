@@ -22,7 +22,7 @@ MyCard.childContextTypes = {
     muiTheme: React.PropTypes.object,
 };
 
-MyCard.PropTypes = {
+MyCard.propTypes = {
     title: React.PropTypes.string.isRequired,
     text: React.PropTypes.string,
 };

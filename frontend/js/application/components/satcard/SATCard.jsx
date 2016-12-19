@@ -15,16 +15,15 @@ class SATCard extends React.Component {
         };
 
         this.renderSVG = this.renderSVG.bind(this);
-        const self = this;
         request
-            .get(self.props.url + '/all_sat')
+            .get(this.props.url + '/all_sat')
             .end((err, res) => {
                 if (res) {
                     const data = JSON.parse(res.text).map(
                             d => ({ name: d.name, value: parseInt(d.sat_avg, 10) }),
                         );
 
-                    self.setState({
+                    this.setState({
                         data,
                         median: d3.quantile(data.map(d => d.value), 0.5),
                     });
@@ -200,7 +199,7 @@ SATCard.childContextTypes = {
     muiTheme: React.PropTypes.object,
 };
 
-SATCard.PropTypes = {
+SATCard.propTypes = {
     containerWidth: React.PropTypes.number.isRequired,
     url: React.PropTypes.string.isRequired,
 };

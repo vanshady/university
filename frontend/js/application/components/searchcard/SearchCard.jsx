@@ -225,8 +225,8 @@ SearchCard.childContextTypes = {
     muiTheme: React.PropTypes.object,
 };
 
-SearchCard.PropTypes = {
-    url: React.PropTypes.string,
+SearchCard.propTypes = {
+    url: React.PropTypes.string.isRequired,
 };
 
 export default SearchCard;

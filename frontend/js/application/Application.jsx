@@ -2,7 +2,7 @@ import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import Header from './components/Header';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Panel from './components/Panel';
 import MyCard from './components/MyCard';
 import SearchCard from './components/searchcard/SearchCard';
@@ -45,7 +45,7 @@ class Application extends React.Component {
                 title="Public University Tuition Difference"
               />
             </Panel>
-            {/* <Footer /> */}
+            <Footer />
           </div>);
     }
 }
