@@ -102,7 +102,7 @@ class SATCard extends React.Component {
             index -= 1;
         }
 
-        // map the domain to the x scale +10%
+        // map the domain
         xScale.domain([600, 1600]);
 
         // append the axis
