@@ -20,7 +20,7 @@ class Application extends React.Component {
               <SearchCard url="https://university-backend.herokuapp.com" />
               <SATCard url="https://university-backend.herokuapp.com" />
             </Panel>
-            {/* <Footer/> */}
+            {/* <Footer /> */}
           </div>);
     }
 }
