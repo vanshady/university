@@ -5,8 +5,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Panel from './components/Panel';
 import MyCard from './components/MyCard';
-import SearchCard from './components/searchcard/SearchCard';
-import SATCard from './components/satcard/SATCard';
+import SearchCard from './components/searchCard/SearchCard';
+import SATCard from './components/SATCard';
 
 const request = require('superagent');
 

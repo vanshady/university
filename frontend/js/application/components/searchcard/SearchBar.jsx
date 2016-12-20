@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
     }
 
     newRequest(value) {
-        if (value == null) return;
+        if (value === null) return;
         if (isFunction(this.props.onSearched) && trim(value)) {
             this.props.onSearched(value);
         }

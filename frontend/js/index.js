@@ -5,9 +5,7 @@
  *  @date    Dec 1, 2016
  *
  */
-'use strict';
-require.ensure(['splash-screen/dist/splash.min.css', 'splash-screen'], function(require) {
-
+require.ensure(['splash-screen/dist/splash.min.css', 'splash-screen'], (require) => {
     require('splash-screen/dist/splash.min.css').use();
     require('splash-screen').Splash.enable('circular');
 });
@@ -15,11 +13,10 @@ require.ensure(['splash-screen/dist/splash.min.css', 'splash-screen'], function(
 require.ensure([
     'less/main.less',
     'splash-screen',
-    './fw/Entrance'
-], function(require) {
-
+    './fw/Entrance.jsx',
+], (require) => {
+    const Entrance = require('./fw/Entrance.jsx').default;
     require('less/main.less');
 
-    var Entrance = require('./fw/Entrance').default;
     (new Entrance()).run();
 });

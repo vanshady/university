@@ -1,6 +1,4 @@
-'use strict';
-
-let Event = {};
+const Event = {};
 
 Event.stop = (e) => {
     if (!e) {

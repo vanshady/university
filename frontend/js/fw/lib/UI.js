@@ -1,13 +1,11 @@
-'use strict';
-
-let UI = {};
+const UI = {};
 
 UI.BREAK_POINT = 850;
 
 UI.windowWidth = () => {
-    let element = document.documentElement;
-    let body = document.getElementsByTagName('body')[0];
-    let width = window.innerWidth || element.clientWidth || body.clientWidth;
+    const element = document.documentElement;
+    const body = document.getElementsByTagName('body')[0];
+    const width = window.innerWidth || element.clientWidth || body.clientWidth;
     return width;
 };
 

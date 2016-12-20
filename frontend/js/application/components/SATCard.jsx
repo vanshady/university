@@ -1,9 +1,8 @@
 import React from 'react';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
 import * as d3 from 'd3';
 import * as ReactFauxDOM from 'react-faux-dom';
 import Dimensions from 'react-dimensions';
-import MyCard from '../MyCard';
+import MyCard from './MyCard';
 
 const request = require('superagent');
 
@@ -19,9 +18,8 @@ class SATCard extends React.Component {
             .get(this.props.url + '/all_sat')
             .end((err, res) => {
                 if (res) {
-                    const data = JSON.parse(res.text).map(
-                            d => ({ name: d.name, value: parseInt(d.sat_avg, 10) }),
-                        );
+                    const data = JSON.parse(res.text)
+                        .map(d => ({ name: d.name, value: parseInt(d.sat_avg, 10) }));
 
                     this.setState({
                         data,
@@ -61,9 +59,7 @@ class SATCard extends React.Component {
         };
 
         const csv = this.state.data;
-        let data = csv.map(d => d.value);
-
-        data = data.sort(d3.ascending);
+        const data = csv.map(d => d.value).sort(d3.ascending);
 
         // calculate the boxplot statistics
         const q1Val = d3.quantile(data, 0.25);

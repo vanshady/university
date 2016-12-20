@@ -5,6 +5,11 @@
       "no-console": 0,
       "prefer-template": 0,
       "indent": ["error", 4],
-      "no-mixed-operators": 0
+      "no-mixed-operators": 0,
+      "global-require": 0
+    },
+    "env": {
+        "browser": true,
+        "es6": true
     }
 }

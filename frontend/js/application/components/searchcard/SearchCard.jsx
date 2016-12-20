@@ -71,7 +71,8 @@ class SearchCard extends React.Component {
             if (typeof university === 'string') {
                 let name = university;
 
-                if (university.substring(0, university.lastIndexOf(',')) === self.state.universities[0].name) {
+                if (university.substring(0,
+                    university.lastIndexOf(',')) === self.state.universities[0].name) {
                     name = self.state.universities[0].name;
                 }
 
@@ -130,7 +131,7 @@ class SearchCard extends React.Component {
 
     renderUniversity() {
         const res = [];
-       
+
         if (this.state.searching) {
             return <LinearProgress mode="indeterminate" />;
         }
@@ -172,13 +173,19 @@ class SearchCard extends React.Component {
             }
 
             if (university.latitude) {
-                createChip(<div><b>Latitude:</b> {Math.round(university.latitude * 100) / 100}</div>);
+                createChip(<div>
+                  <b>Latitude:</b>
+                  {Math.round(university.latitude * 100) / 100}
+                </div>);
             }
 
             if (university.longitude) {
-                createChip(<div><b>Longitude:</b> {Math.round(university.longitude * 100) / 100}</div>);
+                createChip(<div>
+                  <b>Longitude:</b>
+                  {Math.round(university.longitude * 100) / 100}
+                </div>);
             }
-            
+
             if (university.main_campus && typeof university.main_campus === 'boolean') {
                 if (university.main_campus) createChip(<b>Main Campus</b>);
                 else createChip(<b>Not Main Campus</b>);
@@ -209,11 +216,17 @@ class SearchCard extends React.Component {
             }
 
             if (university.tuition_difference !== 0) {
-                createChip(<div><b>Outstate/Instate Tuition Difference:</b> {university.tuition_difference}</div>);
+                createChip(<div>
+                  <b>Outstate/Instate Tuition Difference:</b>
+                  {university.tuition_difference}
+                </div>);
             }
 
             if (university.tuition_expense_difference !== 0) {
-                createChip(<div><b>Expense - Tuition:</b> {university.tuition_expense_difference}</div>);
+                createChip(<div>
+                  <b>Expense - Tuition:</b>
+                  {university.tuition_expense_difference}
+                </div>);
             }
         }
 
@@ -231,7 +244,8 @@ class SearchCard extends React.Component {
 
             <SearchBar
               onSearched={this.onSearched}
-              universities={this.state.universities.map(el => ({ name: el.name + ', ' + el.city_name, unit_id: el.unit_id }))}
+              universities={this.state.universities.map(
+                  el => ({ name: el.name + ', ' + el.city_name, unit_id: el.unit_id }))}
               onUpdateInput={this.onUpdateInput}
               hintText="Which university are you interested in?"
             />
