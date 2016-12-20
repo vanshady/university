@@ -3,9 +3,8 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
 import { amber400 } from 'material-ui/styles/colors';
 import LinearProgress from 'material-ui/LinearProgress';
+import request from 'superagent';
 import SearchBar from './SearchBar';
-
-const request = require('superagent');
 
 const errorMessage = 'Sorry no result found';
 

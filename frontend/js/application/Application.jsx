@@ -1,14 +1,13 @@
 import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import request from 'superagent';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Panel from './components/Panel';
 import MyCard from './components/MyCard';
 import SearchCard from './components/searchCard/SearchCard';
 import SATCard from './components/SATCard';
-
-const request = require('superagent');
 
 class Application extends React.Component {
     constructor(props) {

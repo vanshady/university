@@ -2,9 +2,8 @@ import React from 'react';
 import * as d3 from 'd3';
 import * as ReactFauxDOM from 'react-faux-dom';
 import Dimensions from 'react-dimensions';
+import request from 'superagent';
 import MyCard from './MyCard';
-
-const request = require('superagent');
 
 class SATCard extends React.Component {
     constructor(props) {
