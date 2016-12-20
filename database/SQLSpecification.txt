@@ -42,4 +42,8 @@
 
 19. List the school names, and the percentage of student of a specified race, in decreasing percentage order
 
-20. List all the universities that have been closed 
+20. List all the universities that have been closed
+
+21. List the names and average sat of the universities in alphabetical order
+	AllSAT
+ 
