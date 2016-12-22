@@ -57,6 +57,29 @@ class SearchCard extends React.Component {
             }
         }
 
+        function handleDegree(err, res) {
+            if (res.status !== res.notFound || JSON.parse(res.text)) {
+                self.setState({
+                    university: Object.assign(self.state.university,
+                    { degree_percentage: JSON.parse(res.text) }),
+                });
+            } else {
+                self.setState({ search_failed: true });
+            }
+        }
+
+        function handleRace(err, res) {
+            if (res.status !== res.notFound || JSON.parse(res.text)) {
+                self.setState({
+                    university: Object.assign(self.state.university,
+                        { race: JSON.parse(res.text).filter(v => v.detail !== 'Total'),
+                            total_admission: JSON.parse(res.text).find(v => v.detail === 'Total').percentage }),
+                });
+            } else {
+                self.setState({ search_failed: true });
+            }
+        }
+
         function makeRequest(api, id, cb) {
             request
                 .get(self.props.url + `/${api}/${id}`)
@@ -77,6 +100,8 @@ class SearchCard extends React.Component {
             makeRequest('tuition_difference', id);
             makeRequest('tuition_expense_difference', id);
             makeRequest('completion_rate', id, handleCompletionRate);
+            makeRequest('unit_degree', id, handleDegree);
+            makeRequest('unit_race', id, handleRace);
         }
 
         function checkId() {
@@ -184,6 +209,14 @@ class SearchCard extends React.Component {
                 createChip(<a href={'http://' + university.url}>{'http://' + university.url}</a>);
             }
 
+            if (university.total_admission !== 0) {
+                console.log(university.total_admission);
+                createChip(<div>
+                  <b>Total Admission:</b>
+                  {university.total_admission}
+                </div>);
+            }
+
             if (university.latitude) {
                 createChip(<div>
                   <b>Latitude:</b>
@@ -241,7 +274,8 @@ class SearchCard extends React.Component {
                 </div>);
             }
 
-            if (university.completion_rate) {
+            if (university.completion_rate && university.completion_rate.length > 0
+                && university.completion_rate.filter(v => v.percentage > 0).length > 0) {
                 res.push(
                   <div style={{ display: 'block' }}>
                     <Table height="300px">
@@ -253,6 +287,50 @@ class SearchCard extends React.Component {
                       </TableHeader>
                       <TableBody displayRowCheckbox={false}>
                         {university.completion_rate.map((row, index) =>
+                          (<TableRow key={index}>
+                            <TableRowColumn>{row.detail}</TableRowColumn>
+                            <TableRowColumn>{`${Math.round(parseFloat(row.percentage) * 1000) / 10}%`}</TableRowColumn>
+                          </TableRow>))}
+                      </TableBody>
+                    </Table>
+                  </div>);
+            }
+
+            if (university.degree_percentage && university.degree_percentage.length > 0
+                && university.degree_percentage.filter(v => v.percentage > 0).length > 0) {
+                res.push(
+                  <div style={{ display: 'block' }}>
+                    <Table height="300px">
+                      <TableHeader displaySelectAll={false}>
+                        <TableRow>
+                          <TableHeaderColumn>Degree</TableHeaderColumn>
+                          <TableHeaderColumn>Percentage</TableHeaderColumn>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody displayRowCheckbox={false}>
+                        {university.degree_percentage.map((row, index) =>
+                          (<TableRow key={index}>
+                            <TableRowColumn>{row.degree_name}</TableRowColumn>
+                            <TableRowColumn>{`${Math.round(parseFloat(row.percentage) * 1000) / 10}%`}</TableRowColumn>
+                          </TableRow>))}
+                      </TableBody>
+                    </Table>
+                  </div>);
+            }
+
+            if (university.race && university.race.length > 0
+                && university.race.filter(v => v.percentage > 0).length > 0) {
+                res.push(
+                  <div style={{ display: 'block' }}>
+                    <Table height="300px">
+                      <TableHeader displaySelectAll={false}>
+                        <TableRow>
+                          <TableHeaderColumn>Student Type</TableHeaderColumn>
+                          <TableHeaderColumn>Percentage</TableHeaderColumn>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody displayRowCheckbox={false}>
+                        {university.race.map((row, index) =>
                           (<TableRow key={index}>
                             <TableRowColumn>{row.detail}</TableRowColumn>
                             <TableRowColumn>{`${Math.round(parseFloat(row.percentage) * 1000) / 10}%`}</TableRowColumn>
