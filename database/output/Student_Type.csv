@@ -1,12 +1,12 @@
 type_id,detail
-1,White 
-2,Black 
-3,Hispanic 
-4,Asian 
-5,American Indian/Alaska Native 
-6,Native Hawaiian/Pacific Islander 
+1,White
+2,Black
+3,Hispanic
+4,Asian
+5,American Indian/Alaska Native
+6,Native Hawaiian/Pacific Islander
 7,Of Two or More Races
-8,Non-resident Alien 
+8,Non-resident Alien
 9,Unknown Race
 10,Total
 11,Male
@@ -16,8 +16,8 @@ type_id,detail
 15,High Income
 16,First Generation
 17,Not First Generation
-18.Completed
-19.Withdrawn
-20.Dependent
-21.Independent
-22.Loaned
+18,Completed
+19,Withdrawn
+20,Dependent
+21,Independent
+22,Loaned
