@@ -10,6 +10,7 @@ import SearchCard from './components/searchCard/SearchCard';
 import SATCard from './components/SATCard';
 import EnrollPercentCard from './components/EnrollPercentCard';
 import AvgDebtCard from './components/AvgDebtCard';
+import AvgIncomeCard from './components/AvgIncomeCard';
 import SATHigherCard from './components/SATHigherCard';
 import UniControlCard from './components/UniControlCard';
 import UniStateCard from './components/UniStateCard';
@@ -67,6 +68,7 @@ class Application extends React.Component {
               </MyCard>
               <EnrollPercentCard url={this.state.url} />
               <AvgDebtCard url={this.state.url} />
+              <AvgIncomeCard url={this.state.url} />
               <SATHigherCard url={this.state.url} />
               <UniControlCard url={this.state.url} />
               <UniStateCard url={this.state.url} />
