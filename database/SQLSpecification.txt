@@ -17,30 +17,43 @@
 	TuitionExpenseDifference
 
 7. List the average difference of the instructional_expenditures and tuition of private non-profit schools
+	PrivateTuitionExpenseDiff
 
 8. List the completion rate of different type of people in a specified university
+	CompletionRate
 
 9. List the average percentage of students of different type of a specified control of schools, in decreasing order
+	AvgEnrollPercent
 
-10. List the average debt percentage of students of different type of a specified control of schools, in decreasing order
+10. List the average debt of students of different type of a specified control of schools, in decreasing order
+	AvgDebtValue
 
 11. List the average median-family-income of the three controls of schools, in decreasing order
+	AvgMedInc
 
 12. List the school name, admission rate, average SAT scores of all school, first in ascending admission rate, then in decreasing SAT scores. 
+	AllAdmissionSAT
 
-13. List the school name of all schools that have an average SAT scores larger than a specified score.
+13. List the school name and SAT scores of all schools that have an average SAT scores larger than a specified score.
+	SATHigher
 
 14. List all the schools that is a specified control
+	UniControl
 
-15. List all the schools that is in a specified state
+15. List all the schools(name and city name) that is in a specified state
+	UniState
 
 16. List the distance of two schools(based on city)
+	UniDist
 
 17. List the degrees and percentage of a specified school, first in decreasing percentage, then in alphabetical order
+	UniDegree
 
 18. List the race and percentage of the student in a specified university, in decreasing percentage order
+	UniRace
 
 19. List the school names, and the percentage of student of a specified race, in decreasing percentage order
+	RaceRank
 
 20. List all the universities that have been closed
 
