@@ -15,6 +15,7 @@ import UniControlCard from './components/UniControlCard';
 import UniStateCard from './components/UniStateCard';
 import ClosedUniCard from './components/ClosedUniCard';
 import RaceRankCard from './components/RaceRankCard';
+import DistCard from './components/DistCard';
 
 class Application extends React.Component {
     constructor(props) {
@@ -71,6 +72,7 @@ class Application extends React.Component {
               <UniStateCard url={this.state.url} />
               <ClosedUniCard url={this.state.url} />
               <RaceRankCard url={this.state.url} />
+              <DistCard url={this.state.url} />
             </Panel>
             <Footer />
           </div>);
