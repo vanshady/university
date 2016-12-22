@@ -169,16 +169,11 @@ delimiter ;
 
 delimiter //
 DROP PROCEDURE IF EXISTS AvgMedInc // 
-CREATE PROCEDURE AvgMedInc()
+CREATE PROCEDURE AvgMedInc(IN id INT)
 BEGIN
-SELECT Control.detail,med_inc
-FROM Control,(
-SELECT AVG(med_inc) AS med_inc,control_id
+SELECT AVG(med_inc) AS med_inc
 FROM Family,University
-WHERE Family.unit_id = University.unit_id
-GROUP BY control_id) AS R
-WHERE Control.control_id = R.control_id
-ORDER BY med_inc DESC;
+WHERE Family.unit_id = University.unit_id AND University.control_id = id;
 END //
 delimiter ;
 
@@ -188,7 +183,8 @@ CREATE PROCEDURE SATHigher(IN sat INT)
 BEGIN
 SELECT University.name,Admission.sat_avg
 FROM University,Admission
-WHERE University.unit_id = Admission.unit_id AND Admission.sat_avg > sat;
+WHERE University.unit_id = Admission.unit_id AND Admission.sat_avg > sat
+ORDER BY sat_avg ASC;
 END //
 delimiter ;
 
@@ -220,7 +216,8 @@ CREATE PROCEDURE UniState(IN sn VARCHAR(100))
 BEGIN
 SELECT name
 FROM University,City,State
-WHERE University.city_id = City.city_id AND City.state_id = State.state_id AND State.state_name = sn;
+WHERE University.city_id = City.city_id AND City.state_id = State.state_id AND State.state_name = sn
+ORDER BY name ASC;
 END//
 delimiter ;
 
