@@ -9,6 +9,7 @@ import MyCard from './components/MyCard';
 import SearchCard from './components/searchCard/SearchCard';
 import SATCard from './components/SATCard';
 import EnrollPercentCard from './components/EnrollPercentCard';
+import AvgDebtCard from './components/AvgDebtCard';
 
 class Application extends React.Component {
     constructor(props) {
@@ -59,6 +60,7 @@ class Application extends React.Component {
                 <p>{ `The average expense - tutiion for private universities is $${this.state.private_difference}.` }</p>
               </MyCard>
               <EnrollPercentCard url="https://university-backend.herokuapp.com" />
+              <AvgDebtCard url="https://university-backend.herokuapp.com" />
             </Panel>
             <Footer />
           </div>);
