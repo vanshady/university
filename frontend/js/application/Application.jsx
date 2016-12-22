@@ -13,6 +13,7 @@ import AvgDebtCard from './components/AvgDebtCard';
 import SATHigherCard from './components/SATHigherCard';
 import UniControlCard from './components/UniControlCard';
 import UniStateCard from './components/UniStateCard';
+import ClosedUniCard from './components/ClosedUniCard';
 
 class Application extends React.Component {
     constructor(props) {
@@ -67,6 +68,7 @@ class Application extends React.Component {
               <SATHigherCard url={this.state.url} />
               <UniControlCard url={this.state.url} />
               <UniStateCard url={this.state.url} />
+              <ClosedUniCard url={this.state.url} />
             </Panel>
             <Footer />
           </div>);
