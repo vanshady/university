@@ -45,7 +45,7 @@ class ClosedUniCard extends React.Component {
                 <Table height="300px">
                   <TableHeader displaySelectAll={false}>
                     <TableRow>
-                      <TableHeaderColumn>Universities</TableHeaderColumn>
+                      <TableHeaderColumn>University</TableHeaderColumn>
                     </TableRow>
                   </TableHeader>
                   <TableBody displayRowCheckbox={false}>
