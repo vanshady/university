@@ -12,9 +12,7 @@ import SATCard from './components/SATCard';
 class Application extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            expanded: false,
-        };
+        this.state = {};
         const url = 'https://university-backend.herokuapp.com';
         const self = this;
         request
@@ -22,7 +20,15 @@ class Application extends React.Component {
             .end((err, res) => {
                 if (res) {
                     const difference = parseFloat(JSON.parse(res.text)[0].difference);
-                    self.setState({ difference: Math.round(difference * 100) / 100 });
+                    self.setState({ public_difference: Math.round(difference * 100) / 100 });
+                }
+            });
+        request
+            .get(url + '/private_tuition_expense_diff')
+            .end((err, res) => {
+                if (res) {
+                    const difference = parseFloat(JSON.parse(res.text)[0].difference);
+                    self.setState({ private_difference: Math.round(difference * 100) / 100 });
                 }
             });
     }
@@ -39,10 +45,16 @@ class Application extends React.Component {
               <SearchCard url="https://university-backend.herokuapp.com" />
               <SATCard url="https://university-backend.herokuapp.com" />
               <MyCard
-                loading={!this.state.difference}
+                loading={!this.state.public_difference}
                 title="Public University Tuition Difference"
               >
-                <p>{ `The average difference between out-state and in-state tuition of public universities is $${this.state.difference}.` }</p>
+                <p>{ `The average difference between out-state and in-state tuition of public universities is $${this.state.public_difference}.` }</p>
+              </MyCard>
+              <MyCard
+                loading={!this.state.private_difference}
+                title="Private University Tuition Expense Difference"
+              >
+                <p>{ `The average expense - tutiion for private universities is $${this.state.private_difference}.` }</p>
               </MyCard>
             </Panel>
             <Footer />
