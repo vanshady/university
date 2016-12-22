@@ -10,7 +10,7 @@ import SearchCard from './components/searchCard/SearchCard';
 import SATCard from './components/SATCard';
 import EnrollPercentCard from './components/EnrollPercentCard';
 import AvgDebtCard from './components/AvgDebtCard';
-
+import SATHigherCard from './components/SATHigherCard';
 
 class Application extends React.Component {
     constructor(props) {
@@ -62,6 +62,7 @@ class Application extends React.Component {
               </MyCard>
               <EnrollPercentCard url={this.state.url} />
               <AvgDebtCard url={this.state.url} />
+              <SATHigherCard url={this.state.url} />
             </Panel>
             <Footer />
           </div>);
