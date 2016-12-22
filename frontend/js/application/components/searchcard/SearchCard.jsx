@@ -38,7 +38,6 @@ class SearchCard extends React.Component {
         const self = this;
 
         function handleResponse(err, res) {
-            console.log(res.text);
             if (res.status !== res.notFound || JSON.parse(res.text)) {
                 self.setState({
                     university: Object.assign(self.state.university, JSON.parse(res.text)[0]),
@@ -49,7 +48,6 @@ class SearchCard extends React.Component {
         }
 
         function handleCompletionRate(err, res) {
-            console.log(res.text);
             if (res.status !== res.notFound || JSON.parse(res.text)) {
                 self.setState({
                     university: Object.assign(self.state.university, { completion_rate: JSON.parse(res.text) }),
