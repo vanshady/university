@@ -44,6 +44,7 @@ class Application extends React.Component {
             <Header />
             <Panel>
               <SearchCard url="https://university-backend.herokuapp.com" />
+              <h3>Below are the statistics for all universities</h3>
               <SATCard url="https://university-backend.herokuapp.com" />
               <MyCard
                 loading={!this.state.public_difference}
