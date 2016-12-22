@@ -210,7 +210,6 @@ class SearchCard extends React.Component {
             }
 
             if (university.total_admission !== 0) {
-                console.log(university.total_admission);
                 createChip(<div>
                   <b>Total Admission:</b>
                   {university.total_admission}
