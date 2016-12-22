@@ -60,7 +60,7 @@ class AvgDebtCard extends React.Component {
                     {this.state.data.map((row, index) =>
                     (<TableRow key={index}>
                       <TableRowColumn>{row.detail}</TableRowColumn>
-                      <TableRowColumn>{`${Math.round(parseFloat(row.debt) * 1000) / 10}%`}</TableRowColumn>
+                      <TableRowColumn>{`$${Math.round(parseFloat(row.debt) * 10) / 10}`}</TableRowColumn>
                     </TableRow>))}
                   </TableBody>
                 </Table>
