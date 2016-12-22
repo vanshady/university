@@ -3,14 +3,14 @@ CREATE TABLE Student_Type (
     `type_id` VARCHAR(14) CHARACTER SET utf8,
     `detail` VARCHAR(33) CHARACTER SET utf8
 );
-INSERT INTO Student_Type VALUES ('1','White ');
-INSERT INTO Student_Type VALUES ('2','Black ');
-INSERT INTO Student_Type VALUES ('3','Hispanic ');
-INSERT INTO Student_Type VALUES ('4','Asian ');
-INSERT INTO Student_Type VALUES ('5','American Indian/Alaska Native ');
-INSERT INTO Student_Type VALUES ('6','Native Hawaiian/Pacific Islander ');
+INSERT INTO Student_Type VALUES ('1','White');
+INSERT INTO Student_Type VALUES ('2','Black');
+INSERT INTO Student_Type VALUES ('3','Hispanic');
+INSERT INTO Student_Type VALUES ('4','Asian');
+INSERT INTO Student_Type VALUES ('5','American Indian/Alaska Native');
+INSERT INTO Student_Type VALUES ('6','Native Hawaiian/Pacific Islander');
 INSERT INTO Student_Type VALUES ('7','Of Two or More Races');
-INSERT INTO Student_Type VALUES ('8','Non-resident Alien ');
+INSERT INTO Student_Type VALUES ('8','Non-resident Alien');
 INSERT INTO Student_Type VALUES ('9','Unknown Race');
 INSERT INTO Student_Type VALUES ('10','Total');
 INSERT INTO Student_Type VALUES ('11','Male');

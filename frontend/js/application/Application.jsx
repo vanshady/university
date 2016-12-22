@@ -8,21 +8,35 @@ import Panel from './components/Panel';
 import MyCard from './components/MyCard';
 import SearchCard from './components/searchCard/SearchCard';
 import SATCard from './components/SATCard';
+import EnrollPercentCard from './components/EnrollPercentCard';
+import AvgDebtCard from './components/AvgDebtCard';
+import SATHigherCard from './components/SATHigherCard';
+import UniControlCard from './components/UniControlCard';
+import UniStateCard from './components/UniStateCard';
+import ClosedUniCard from './components/ClosedUniCard';
+import RaceRankCard from './components/RaceRankCard';
+import DistCard from './components/DistCard';
 
 class Application extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            expanded: false,
-        };
         const url = 'https://university-backend.herokuapp.com';
+        this.state = { url };
         const self = this;
         request
             .get(url + '/public_tuition_difference')
             .end((err, res) => {
                 if (res) {
                     const difference = parseFloat(JSON.parse(res.text)[0].difference);
-                    self.setState({ difference: Math.round(difference * 100) / 100 });
+                    self.setState({ public_difference: Math.round(difference * 100) / 100 });
+                }
+            });
+        request
+            .get(url + '/private_tuition_expense_diff')
+            .end((err, res) => {
+                if (res) {
+                    const difference = parseFloat(JSON.parse(res.text)[0].difference);
+                    self.setState({ private_difference: Math.round(difference * 100) / 100 });
                 }
             });
     }
@@ -36,14 +50,29 @@ class Application extends React.Component {
           <div>
             <Header />
             <Panel>
-              <SearchCard url="https://university-backend.herokuapp.com" />
-              <SATCard url="https://university-backend.herokuapp.com" />
+              <SearchCard url={this.state.url} />
+              <h3>Below are the statistics for all universities</h3>
+              <SATCard url={this.state.url} />
               <MyCard
-                loading={!this.state.difference}
+                loading={!this.state.public_difference}
                 title="Public University Tuition Difference"
               >
-                <p>{ `The average difference between out-state and in-state tuition of public universities is $${this.state.difference}.` }</p>
+                <p>{ `The average difference between out-state and in-state tuition of public universities is $${this.state.public_difference}.` }</p>
               </MyCard>
+              <MyCard
+                loading={!this.state.private_difference}
+                title="Private University Tuition Expense Difference"
+              >
+                <p>{ `The average expense - tutiion for private universities is $${this.state.private_difference}.` }</p>
+              </MyCard>
+              <EnrollPercentCard url={this.state.url} />
+              <AvgDebtCard url={this.state.url} />
+              <SATHigherCard url={this.state.url} />
+              <UniControlCard url={this.state.url} />
+              <UniStateCard url={this.state.url} />
+              <ClosedUniCard url={this.state.url} />
+              <RaceRankCard url={this.state.url} />
+              <DistCard url={this.state.url} />
             </Panel>
             <Footer />
           </div>);
