@@ -1,9 +1,3 @@
-DROP TABLE IF EXISTS State;
-CREATE TABLE State (
-    `state_id` INT,
-    `state_name` VARCHAR(30) CHARACTER SET utf8,
-    `postcode` VARCHAR(2) CHARACTER SET utf8
-);
 INSERT INTO State VALUES (1,'Alabama','AL');
 INSERT INTO State VALUES (2,'Alaska','AK');
 INSERT INTO State VALUES (4,'Arizona','AZ');

@@ -1,18 +1,3 @@
-DROP TABLE IF EXISTS Admission;
-CREATE TABLE Admission (
-    `unit_id` INT,
-    `admission_rate` NUMERIC(5, 4),
-    `vr25` INT,
-    `vr50` INT,
-    `vr75` INT,
-    `mt25` INT,
-    `mt50` INT,
-    `mt75` INT,
-    `wr25` INT,
-    `wr50` INT,
-    `wr75` INT,
-    `sat_avg` INT
-);
 INSERT INTO Admission VALUES (100654,0.5256,377,424,470,370,420,470,370,420,470,827);
 INSERT INTO Admission VALUES (100663,0.8569,500,570,640,490,565,640,NULL,NULL,NULL,1107);
 INSERT INTO Admission VALUES (100706,0.8203,520,595,670,530,590,650,NULL,NULL,NULL,1219);

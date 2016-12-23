@@ -1,11 +1,3 @@
-DROP TABLE IF EXISTS Tuition;
-CREATE TABLE Tuition (
-    `unit_id` INT,
-    `in_state` INT,
-    `out_state` INT,
-    `net` INT,
-    `instructional_expenditures` INT
-);
 INSERT INTO Tuition VALUES (100654,9096,16596,9427,7437);
 INSERT INTO Tuition VALUES (100663,7510,17062,9899,17920);
 INSERT INTO Tuition VALUES (100690,6900,6900,12459,5532);

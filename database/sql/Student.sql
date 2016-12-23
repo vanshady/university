@@ -1,10 +1,3 @@
-DROP TABLE IF EXISTS Student;
-CREATE TABLE Student (
-    `unit_id` INT,
-    `percentage` NUMERIC(11, 10),
-    `dependency` VARCHAR(11) CHARACTER SET utf8,
-    `income_level` INT
-);
 INSERT INTO Student VALUES (100654,0.6515211379,'aided',1);
 INSERT INTO Student VALUES (100654,0.167917819,'aided',2);
 INSERT INTO Student VALUES (100654,0.0975898854,'aided',3);

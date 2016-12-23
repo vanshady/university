@@ -1,10 +1,3 @@
-DROP TABLE IF EXISTS Completion;
-CREATE TABLE Completion (
-    `unit_id` INT,
-    `percentage` NUMERIC(5, 4),
-    `type_id` INT,
-    `less_than_4yr` INT
-);
 INSERT INTO Completion VALUES (100654,0.1429,1,0);
 INSERT INTO Completion VALUES (100654,0.3581,2,0);
 INSERT INTO Completion VALUES (100654,0,3,0);

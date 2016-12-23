@@ -1,8 +1,3 @@
-DROP TABLE IF EXISTS Student_Type;
-CREATE TABLE Student_Type (
-    `type_id` VARCHAR(14) CHARACTER SET utf8,
-    `detail` VARCHAR(33) CHARACTER SET utf8
-);
 INSERT INTO Student_Type VALUES ('1','White');
 INSERT INTO Student_Type VALUES ('2','Black');
 INSERT INTO Student_Type VALUES ('3','Hispanic');

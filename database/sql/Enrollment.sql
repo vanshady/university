@@ -1,9 +1,3 @@
-DROP TABLE IF EXISTS Enrollment;
-CREATE TABLE Enrollment (
-    `unit_id` INT,
-    `percentage` NUMERIC(10, 4),
-    `type_id` INT
-);
 INSERT INTO Enrollment VALUES (100654,0.0333,1);
 INSERT INTO Enrollment VALUES (100654,0.9353,2);
 INSERT INTO Enrollment VALUES (100654,0.0055,3);

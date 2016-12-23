@@ -1,8 +1,3 @@
-DROP TABLE IF EXISTS Degree;
-CREATE TABLE Degree (
-    `degree_id` INT,
-    `degree_name` VARCHAR(80) CHARACTER SET utf8
-);
 INSERT INTO Degree VALUES (01,'Agriculture, Agriculture Operations, And Related Sciences');
 INSERT INTO Degree VALUES (03,'Natural Resources And Conservation');
 INSERT INTO Degree VALUES (04,'Architecture And Related Services');

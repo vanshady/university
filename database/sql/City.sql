@@ -1,12 +1,3 @@
-DROP TABLE IF EXISTS City;
-CREATE TABLE City (
-    `city_id` INT,
-    `city_name` VARCHAR(24) CHARACTER SET utf8,
-    `state_id` INT,
-    `region_id` INT,
-    `latitude` NUMERIC(9, 7),
-    `longitude` NUMERIC(10, 7)
-);
 INSERT INTO City VALUES (1,'Aberdeen',46,4,45.452555,-98.4837);
 INSERT INTO City VALUES (2,'Aberdeen',53,8,46.953411,-123.802931);
 INSERT INTO City VALUES (3,'Abilene',48,6,32.46915,-99.70954);
