@@ -1,0 +1,8 @@
+.DS_Store
+dependency-reduced-pom.xml
+*.iml
+todo.db
+target/
+.idea/
+javac-services.0.log
+javac-services.0.log.lck
