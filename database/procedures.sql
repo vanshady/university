@@ -1,3 +1,4 @@
+-- List the names of the universities in alphabetical order
 delimiter //
 DROP PROCEDURE IF EXISTS AllNames //
 CREATE PROCEDURE AllNames()
@@ -8,6 +9,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the SAT scores of all school
 delimiter //
 DROP PROCEDURE IF EXISTS AllSAT //
 CREATE PROCEDURE AllSAT()
@@ -21,6 +23,7 @@ END IF;
 END//
 delimiter ;
 
+-- search the university that has the specified name
 delimiter //
 DROP PROCEDURE IF EXISTS SearchName //
 CREATE PROCEDURE SearchName(IN curname VARCHAR(93))
@@ -34,6 +37,7 @@ END IF;
 END//
 delimiter ;
 
+-- return the first 10 university name, in alphabetical order
 delimiter //
 DROP PROCEDURE IF EXISTS EmptySearchName //
 CREATE PROCEDURE EmptySearchName()
@@ -47,6 +51,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the information of a specified university
 delimiter //
 DROP PROCEDURE IF EXISTS UniversityInfo //
 CREATE PROCEDURE UniversityInfo(IN id INT)
@@ -59,6 +64,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the address information of the university(city_name,state_name, latitude, longitude, zip)
 delimiter //
 DROP PROCEDURE IF EXISTS UniversityAddress//
 CREATE PROCEDURE UniversityAddress(IN id INT)
@@ -73,6 +79,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the difference of the in-state and out-state tuition of a specified school(out_state minus in_state)
 delimiter //
 DROP PROCEDURE IF EXISTS TuitionDifference //
 CREATE PROCEDURE TuitionDifference(IN id INT)
@@ -87,6 +94,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the average difference of the in-state and out-state tuition of public schools(out_state minus in_state)
 delimiter //
 DROP PROCEDURE IF EXISTS PublicTuitionDifference //
 CREATE PROCEDURE PublicTuitionDifference()
@@ -97,6 +105,7 @@ WHERE Tuition.unit_id = University.unit_id AND University.control_id = Control.c
 END//
 delimiter ;
 
+-- List the difference of the instructional_expenditures and tuition of a specified school(expenditure minus in_state)
 delimiter //
 DROP PROCEDURE IF EXISTS TuitionExpenseDifference //
 CREATE PROCEDURE TuitionExpenseDifference(IN id INT)
@@ -111,6 +120,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the average difference of the instructional_expenditures and tuition of private non-profit schools
 delimiter //
 DROP PROCEDURE IF EXISTS PrivateTuitionExpenseDiff //
 CREATE PROCEDURE PrivateTuitionExpenseDiff()
@@ -123,6 +133,7 @@ AND University.control_id = Control.control_id AND Control.detail = "private non
 END//
 delimiter ;
 
+-- List the completion rate of different type of people in a specified university
 delimiter //
 DROP PROCEDURE IF EXISTS CompletionRate //
 CREATE PROCEDURE CompletionRate(In id INT)
@@ -137,6 +148,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the average percentage of students of different type of a specified control of schools, in decreasing order
 delimiter //
 DROP PROCEDURE IF EXISTS AvgEnrollPercent //
 CREATE PROCEDURE AvgEnrollPercent(In id INT)
@@ -152,6 +164,7 @@ ORDER BY R.percentage DESC;
 END//
 delimiter ;
 
+-- List the average debt of students of different type of a specified control of schools, in decreasing order
 delimiter //
 DROP PROCEDURE IF EXISTS AvgDebtValue //
 CREATE PROCEDURE AvgDebtValue(In id INT)
@@ -167,6 +180,7 @@ ORDER BY R.debt;
 END//
 delimiter ;
 
+-- List the amedian-family-income of of a specified control of schools
 delimiter //
 DROP PROCEDURE IF EXISTS AvgMedInc // 
 CREATE PROCEDURE AvgMedInc(IN id INT)
@@ -177,6 +191,7 @@ WHERE Family.unit_id = University.unit_id AND University.control_id = id;
 END //
 delimiter ;
 
+-- List the average median-family-income of the three controls of schools, in decreasing order
 delimiter //
 DROP PROCEDURE IF EXISTS SATHigher // 
 CREATE PROCEDURE SATHigher(IN sat INT)
@@ -188,7 +203,8 @@ ORDER BY sat_avg ASC;
 END //
 delimiter ;
 
-
+-- List the school name, admission rate, average SAT scores of all school, 
+-- first in ascending admission rate, then in decreasing SAT scores. 
 delimiter //
 DROP PROCEDURE IF EXISTS AllAdmissionSAT // 
 CREATE PROCEDURE AllAdmissionSAT()
@@ -200,6 +216,7 @@ ORDER BY admission_rate ASC, sat_avg DESC;
 END //
 delimiter ;
 
+-- List all the schools that is a specified control
 delimiter //
 DROP PROCEDURE IF EXISTS UniControl // 
 CREATE PROCEDURE UniControl(IN id INT)
@@ -210,6 +227,7 @@ WHERE control_id = id;
 END//
 delimiter ;
 
+-- List all the schools(name and city name) that is in a specified state
 delimiter //
 DROP PROCEDURE IF EXISTS UniState // 
 CREATE PROCEDURE UniState(IN sn VARCHAR(100))
@@ -221,6 +239,7 @@ ORDER BY name ASC;
 END//
 delimiter ;
 
+-- List the distance of two schools(based on city)
 delimiter //
 DROP PROCEDURE IF EXISTS UniDist // 
 CREATE PROCEDURE UniDist(IN uid1 INT, IN uid2 INT)
@@ -240,6 +259,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the degrees and percentage of a specified school, first in decreasing percentage, then in alphabetical order
 delimiter //
 DROP PROCEDURE IF EXISTS UniDegree //
 CREATE PROCEDURE UniDegree(In id INT)
@@ -251,6 +271,7 @@ ORDER BY percentage DESC, degree_name ASC;
 END//
 delimiter ;
 
+-- List the race and percentage of the student in a specified university, in decreasing percentage order
 delimiter //
 DROP PROCEDURE IF EXISTS UniRace //
 CREATE PROCEDURE UniRace(In id INT)
@@ -265,6 +286,7 @@ END IF;
 END//
 delimiter ;
 
+-- List the first ten school names, and the percentage of student of a specified race, in decreasing percentage order
 delimiter //
 DROP PROCEDURE IF EXISTS RaceRank //
 CREATE PROCEDURE RaceRank(In race VARCHAR(100))
@@ -283,6 +305,7 @@ LIMIT 10;
 END//
 delimiter ;
 
+-- List all the universities that have been closed
 delimiter //
 DROP PROCEDURE IF EXISTS ClosedUni //
 CREATE PROCEDURE ClosedUni()
