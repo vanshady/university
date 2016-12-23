@@ -56,7 +56,7 @@
 	RaceRank
 
 20. List all the universities that have been closed
-	
+	UniClosed
 
 21. List the names and average sat of the universities in alphabetical order
 	AllSAT
